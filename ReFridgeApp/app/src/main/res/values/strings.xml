@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">ReFridge</string>
+    <string name="grocery_add_placeholder">Name of grocery item</string>
+    <string name="grocery_add_button">Add Item</string>
+    <string name="grocery_add_date_placeholder">Expiration Date</string>
+</resources>
