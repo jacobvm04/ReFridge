@@ -28,11 +28,6 @@ public class AddGroceryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_grocery);
 
-        Intent intent = getIntent();
-        groceryItems = (ArrayList<GroceryItem>) intent.getSerializableExtra(MainActivity.EXTRA_GROCERY_DATA);
-        if (groceryItems == null)
-            groceryItems = new ArrayList<GroceryItem>();
-
         DatePickerDialog.OnDateSetListener dateSetListener = (datePicker, year, month, day) -> {
             selectedDate.set(year, month, day, 0, 0, 0);
 
@@ -57,14 +52,15 @@ public class AddGroceryActivity extends AppCompatActivity {
     }
 
     public void addGroceryItem(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
         EditText nameEditText = findViewById(R.id.groceryNameText);
         String groceryName = nameEditText.getText().toString();
-        if (!groceryName.isEmpty())
-            groceryItems.add(new GroceryItem(groceryName, selectedDate.getTime()));
+        if (!groceryName.isEmpty()) {
+            AppDatabase db = AppDatabase.getInstance(getApplicationContext());
+            GroceryItemDao dao = db.groceryItemDao();
+            dao.insert(new GroceryItem(groceryName, selectedDate.getTime()));
+        }
 
-        intent.putExtra(MainActivity.EXTRA_GROCERY_DATA, groceryItems);
-
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }

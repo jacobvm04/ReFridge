@@ -16,16 +16,21 @@ import java.util.concurrent.TimeUnit;
 
 public class GroceryListAdapter extends RecyclerView.Adapter<GroceryListAdapter.ViewHolder> {
     private ArrayList<GroceryItem> groceries;
+    private OnGroceryItemListener onGroceryItemListener;
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private final TextView groceryNameView;
         private final TextView expirationDateView;
+        private OnGroceryItemListener onGroceryItemListener;
 
-        public ViewHolder(View view) {
+        public ViewHolder(View view, OnGroceryItemListener groceryItemListener) {
             super(view);
 
             groceryNameView = (TextView) view.findViewById(R.id.groceryName);
             expirationDateView = (TextView) view.findViewById(R.id.experiationDate);
+            onGroceryItemListener = groceryItemListener;
+
+            view.findViewById(R.id.checkItemUsed).setOnClickListener(this);
          }
 
         public TextView getGroceryNameView() {
@@ -35,17 +40,27 @@ public class GroceryListAdapter extends RecyclerView.Adapter<GroceryListAdapter.
         public TextView getExpirationDateView() {
             return expirationDateView;
         }
+
+        @Override
+        public void onClick(View view) {
+            onGroceryItemListener.onGroceryItemClick(getAdapterPosition());
+        }
     }
 
-    public GroceryListAdapter(ArrayList<GroceryItem> groceryData) {
+    public interface OnGroceryItemListener {
+        void onGroceryItemClick(int position);
+    }
+
+    public GroceryListAdapter(ArrayList<GroceryItem> groceryData, OnGroceryItemListener groceryItemListener) {
         groceries = groceryData;
+        onGroceryItemListener = groceryItemListener;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.grocery_item, viewGroup, false);
 
-        return new ViewHolder(view);
+        return new ViewHolder(view, onGroceryItemListener);
     }
 
     @Override

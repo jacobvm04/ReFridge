@@ -15,10 +15,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-public class MainActivity extends AppCompatActivity {
-    public static final String EXTRA_GROCERY_DATA = "com.refridgeapp.GROCERY_DATA";
-
-    // Grocery items are currently represented as a pair of the grocery name and it's respective expiration date
+public class MainActivity extends AppCompatActivity implements GroceryListAdapter.OnGroceryItemListener {
     private ArrayList<GroceryItem> groceryItems;
     private RecyclerView recyclerView;
 
@@ -27,11 +24,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Process new grocery if an intent exists
-        Pair<String, Date> item = null;
-
-        Intent intent = getIntent();
-        groceryItems = (ArrayList<GroceryItem>) intent.getSerializableExtra(EXTRA_GROCERY_DATA);
+        // Load items from DB
+        AppDatabase db = AppDatabase.getInstance(getApplicationContext());
+        GroceryItemDao dao = db.groceryItemDao();
+        groceryItems = (ArrayList<GroceryItem>) dao.getAll();
 
         // Setup recyclerView
         recyclerView = findViewById(R.id.gorceryItemListView);
@@ -42,23 +38,33 @@ public class MainActivity extends AppCompatActivity {
 
         // Mock data for now
         if (groceryItems == null || groceryItems.isEmpty()) {
-            groceryItems = new ArrayList<>();
             Calendar calendar = Calendar.getInstance();
             calendar.setTime(new Date());
 
             calendar.add(Calendar.DATE, 2);
-            groceryItems.add(new GroceryItem("Eggs", calendar.getTime()));
+            dao.insert(new GroceryItem("Eggs", calendar.getTime()));
 
             calendar.add(Calendar.DATE, 1);
-            groceryItems.add(new GroceryItem("Meat", calendar.getTime()));
+            dao.insert(new GroceryItem("Meat", calendar.getTime()));
+
+            groceryItems = (ArrayList<GroceryItem>) dao.getAll();
         }
 
-        recyclerView.setAdapter(new GroceryListAdapter(groceryItems));
+        recyclerView.setAdapter(new GroceryListAdapter(groceryItems, this));
     }
 
     public void addGrocery(View view) {
         Intent intent = new Intent(this, AddGroceryActivity.class);
-        intent.putExtra(EXTRA_GROCERY_DATA, groceryItems);
         startActivity(intent);
+    }
+
+    @Override
+    public void onGroceryItemClick(int position) {
+        AppDatabase db = AppDatabase.getInstance(getApplicationContext());
+        GroceryItemDao dao = db.groceryItemDao();
+        dao.delete(groceryItems.get(position));
+
+        groceryItems = (ArrayList<GroceryItem>) dao.getAll();
+        recyclerView.setAdapter(new GroceryListAdapter(groceryItems, this));
     }
 }
