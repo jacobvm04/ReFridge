@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements GroceryListAdapte
         groceryItems = (ArrayList<GroceryItem>) dao.getAll();
 
         // Setup recyclerView
-        recyclerView = findViewById(R.id.gorceryItemListView);
+        recyclerView = findViewById(R.id.groceryItemListView);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());

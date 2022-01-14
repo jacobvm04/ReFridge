@@ -3,12 +3,14 @@
     package="com.refridgeapp">
 
     <application
+
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:icon="@drawable/ic_fridge_background"
         android:theme="@style/Theme.ReFridgeApp">
+
         <activity
             android:name=".AddGroceryActivity"
             android:exported="false"
