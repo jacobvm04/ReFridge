@@ -1,21 +1,23 @@
 package com.refridgeapp;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Pair;
-import android.view.View;
-import android.widget.EditText;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-public class MainActivity extends AppCompatActivity implements GroceryListAdapter.OnGroceryItemListener {
+public class MainActivity extends AppCompatActivity implements GroceryListAdapter.OnGroceryItemListener, BottomNavigationView.OnNavigationItemSelectedListener {
     private ArrayList<GroceryItem> groceryItems;
     private RecyclerView recyclerView;
 
@@ -35,6 +37,9 @@ public class MainActivity extends AppCompatActivity implements GroceryListAdapte
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
+        bottomNavigationView.setSelectedItemId(R.id.home);
 
         // Mock data for now
         if (groceryItems == null || groceryItems.isEmpty()) {
@@ -66,5 +71,31 @@ public class MainActivity extends AppCompatActivity implements GroceryListAdapte
 
         groceryItems = (ArrayList<GroceryItem>) dao.getAll();
         recyclerView.setAdapter(new GroceryListAdapter(groceryItems, this));
+    }
+
+    // Implements the fragments by making objects
+    BottomNavigationView bottomNavigationView;
+
+    FirstFragment firstFragment = new FirstFragment();
+    SecondFragment secondFragment = new SecondFragment();
+    ThirdFragment thirdFragment = new ThirdFragment();
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.recipes:
+                getSupportFragmentManager().beginTransaction().replace(R.id.container, firstFragment).commit();
+                return true;
+
+            case R.id.account:
+                getSupportFragmentManager().beginTransaction().replace(R.id.container, secondFragment).commit();
+                return true;
+
+            case R.id.fridge:
+                getSupportFragmentManager().beginTransaction().replace(R.id.container, thirdFragment).commit();
+                return true;
+        }
+        return false;
     }
 }
