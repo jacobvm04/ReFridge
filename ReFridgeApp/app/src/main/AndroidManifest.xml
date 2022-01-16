@@ -3,18 +3,21 @@
     package="com.refridgeapp">
 
     <application
-
-        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:icon="@drawable/ic_fridge_background"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:icon="@drawable/ic_fridge_background"
         android:theme="@style/Theme.ReFridgeApp">
-
+        <activity
+            android:name=".Recipes"
+            android:exported="false"
+            android:label="@string/title_activity_recipes"
+            android:theme="@style/Theme.ReFridgeApp.NoActionBar" />
         <activity
             android:name=".AddGroceryActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

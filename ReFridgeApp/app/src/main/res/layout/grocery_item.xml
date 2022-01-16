@@ -13,8 +13,8 @@
         android:layout_marginTop="16dp"
         android:maxWidth="180dp"
         android:text="Grocery Name"
-        android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textColor="#41533E"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,6 +27,7 @@
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="16dp"
         android:text="Days until expiration"
+        android:textColor="#869695"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/checkItemUsed"
