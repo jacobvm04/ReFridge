@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.refridgeapp">
-
+    <uses-feature android:name="android.hardware.camera.any" />
+    <uses-permission android:name="android.permission.CAMERA" />
     <application
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -18,6 +19,7 @@
             android:name=".AddGroceryActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
+        <activity android:name=".CameraActivity"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
