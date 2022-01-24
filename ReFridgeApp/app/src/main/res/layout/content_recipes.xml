@@ -6,41 +6,6 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar2"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:popupTheme="@style/Theme.ReFridgeApp.PopupOverlay"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <EditText
-        android:id="@+id/TextFridge"
-        android:layout_width="219dp"
-        android:layout_height="30dp"
-        android:background="@null"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Fridge Items"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.135" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/showItems"
-        android:layout_width="409dp"
-        android:layout_height="247dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2"
-        app:layout_constraintVertical_bias="0.221" />
 
     <Button
         android:id="@+id/Generate_recipes_button"
@@ -50,18 +15,43 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintTop_toTopOf="@+id/container" />
 
+    <TextView
+        android:id="@+id/TextFridge"
+        android:layout_width="219dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="300dp"
+        android:background="@null"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Fridge Items"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomAppBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="NotSibling" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/showItems"
+        android:layout_width="409dp"
+        android:layout_height="247dp"
+        app:layout_constraintBottom_toTopOf="@+id/Generate_recipes_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextFridge">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="-2dp">
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottomAppBar"
@@ -87,5 +77,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:menu="@menu/bottonnav" />
         </com.google.android.material.bottomappbar.BottomAppBar>
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
