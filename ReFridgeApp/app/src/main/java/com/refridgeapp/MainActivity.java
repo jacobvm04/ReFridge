@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.refridgeapp.RecipesActivity;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -85,15 +86,19 @@ public class MainActivity extends AppCompatActivity implements GroceryListAdapte
 
         switch (item.getItemId()) {
             case R.id.recipes:
-                getSupportFragmentManager().beginTransaction().replace(R.id.container, firstFragment).commit();
+                Intent intent1 = new Intent(MainActivity.this, RecipesActivity.class);
+                startActivity(intent1);
+                //getSupportFragmentManager().beginTransaction().replace(R.id.container, firstFragment).commit();
                 return true;
 
             case R.id.account:
-                getSupportFragmentManager().beginTransaction().replace(R.id.container, secondFragment).commit();
+                Intent intent2 = new Intent(MainActivity.this, account.class);
+                startActivity(intent2);
+                //getSupportFragmentManager().beginTransaction().replace(R.id.container, secondFragment).commit();
                 return true;
 
             case R.id.fridge:
-                getSupportFragmentManager().beginTransaction().replace(R.id.container, thirdFragment).commit();
+                //getSupportFragmentManager().beginTransaction().replace(R.id.container, thirdFragment).commit();
                 return true;
         }
         return false;

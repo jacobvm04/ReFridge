@@ -42,8 +42,10 @@
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/bottomNavigationView"
-                android:layout_width="369dp"
+                android:layout_width="410dp"
                 android:layout_height="55dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
                 android:layout_gravity = "bottom"
                 android:backgroundTint="@color/colorPrimary"
                 app:layout_constraintBottom_toBottomOf="@+id/groceryItemListView"

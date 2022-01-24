@@ -9,13 +9,16 @@
         <entry key="..\:/Users/jacob/Documents/ReFridge/ReFridgeApp/app/src/main/res/layout/grocery_item.xml" value="0.67" />
         <entry key="..\:/Users/nishi/AndroidStudioProjects/ReFridge/ReFridgeApp/app/src/main/res/drawable/ic_account_background.xml" value="0.22760416666666666" />
         <entry key="..\:/Users/nishi/AndroidStudioProjects/ReFridge/ReFridgeApp/app/src/main/res/drawable/ic_account_foreground.xml" value="0.22760416666666666" />
+        <entry key="..\:/Users/nishi/AndroidStudioProjects/ReFridge/ReFridgeApp/app/src/main/res/drawable/ic_fridge_background.xml" value="0.15364583333333334" />
         <entry key="..\:/Users/nishi/AndroidStudioProjects/ReFridge/ReFridgeApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22760416666666666" />
         <entry key="..\:/Users/nishi/AndroidStudioProjects/ReFridge/ReFridgeApp/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.22760416666666666" />
+        <entry key="..\:/Users/nishi/AndroidStudioProjects/ReFridge/ReFridgeApp/app/src/main/res/layout/activity_account.xml" value="0.5" />
         <entry key="..\:/Users/nishi/AndroidStudioProjects/ReFridge/ReFridgeApp/app/src/main/res/layout/activity_add_grocery.xml" value="0.28125" />
-        <entry key="..\:/Users/nishi/AndroidStudioProjects/ReFridge/ReFridgeApp/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/nishi/AndroidStudioProjects/ReFridge/ReFridgeApp/app/src/main/res/layout/activity_main.xml" value="0.20541082164328658" />
         <entry key="..\:/Users/nishi/AndroidStudioProjects/ReFridge/ReFridgeApp/app/src/main/res/layout/activity_recipes.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/nishi/AndroidStudioProjects/ReFridge/ReFridgeApp/app/src/main/res/layout/content_recipes.xml" value="0.33" />
         <entry key="..\:/Users/nishi/AndroidStudioProjects/ReFridge/ReFridgeApp/app/src/main/res/layout/fragment_first.xml" value="0.2838541666666667" />
+        <entry key="..\:/Users/nishi/AndroidStudioProjects/ReFridge/ReFridgeApp/app/src/main/res/layout/fragment_first2.xml" value="0.34739583333333335" />
         <entry key="..\:/Users/nishi/AndroidStudioProjects/ReFridge/ReFridgeApp/app/src/main/res/layout/fragment_second.xml" value="0.25" />
         <entry key="..\:/Users/nishi/AndroidStudioProjects/ReFridge/ReFridgeApp/app/src/main/res/layout/fragment_second2.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/nishi/AndroidStudioProjects/ReFridge/ReFridgeApp/app/src/main/res/layout/fragment_third.xml" value="0.26197916666666665" />
