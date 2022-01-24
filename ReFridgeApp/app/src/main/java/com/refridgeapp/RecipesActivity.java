@@ -67,6 +67,8 @@ public class RecipesActivity extends AppCompatActivity implements BottomNavigati
                 return true;
 
             case R.id.fridge:
+                Intent intent3 = new Intent(RecipesActivity.this, MainActivity.class);
+                startActivity(intent3);
                 //getSupportFragmentManager().beginTransaction().replace(R.id.container, thirdFragment).commit();
                 return true;
         }
