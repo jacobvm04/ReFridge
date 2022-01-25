@@ -7,18 +7,18 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.refridgeapp.RecipesActivity;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-public class MainActivity extends AppCompatActivity implements GroceryListAdapter.OnGroceryItemListener, BottomNavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements GroceryListAdapter.OnGroceryItemListener, BottomNavigationView.OnNavigationItemSelectedListener, ItemUseFragment.itemUseDialogListener {
     private ArrayList<GroceryItem> groceryItems;
     private RecyclerView recyclerView;
 
@@ -65,13 +65,23 @@ public class MainActivity extends AppCompatActivity implements GroceryListAdapte
     }
 
     @Override
-    public void onGroceryItemClick(int position) {
+    public void onDialogClick(DialogFragment dialog) {
         AppDatabase db = AppDatabase.getInstance(getApplicationContext());
         GroceryItemDao dao = db.groceryItemDao();
-        dao.delete(groceryItems.get(position));
 
         groceryItems = (ArrayList<GroceryItem>) dao.getAll();
         recyclerView.setAdapter(new GroceryListAdapter(groceryItems, this));
+    }
+
+    @Override
+    public void onGroceryItemClick(int position) {
+        DialogFragment useDialog = new ItemUseFragment();
+
+        Bundle args = new Bundle();
+        args.putSerializable("groceryItem", groceryItems.get(position));
+        useDialog.setArguments(args);
+
+        useDialog.show(getSupportFragmentManager(), "itemUse");
     }
 
     // Implements the fragments by making objects
