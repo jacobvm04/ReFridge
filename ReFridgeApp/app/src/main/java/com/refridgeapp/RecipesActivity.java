@@ -3,7 +3,6 @@ package com.refridgeapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,25 +31,9 @@ public class RecipesActivity extends AppCompatActivity implements BottomNavigati
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.recipes);
-
-//        // Add_button add clicklistener
-//        next_Activity_button.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v)
-//            {
-//
-//                // Intents are objects of the android.content.Intent type. Your code can send them
-//                // to the Android system defining the components you are targeting.
-//                // Intent to start an activity called SecondActivity with the following code:
-//
-//                Intent intent = new Intent(Oneactivity.this, SecondActivity.class);
-//
-//                // start the activity connect to the specified class
-//                startActivity(intent);
-//            }
-//        });
     }
-    // Implements the Activites by using switch case and making use of intents
 
+    // Implements the Activites by using switch case and making use of intent
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
