@@ -1,18 +1,23 @@
 package com.refridgeapp;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.refridgeapp.RecipesActivity;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -77,9 +82,6 @@ public class MainActivity extends AppCompatActivity implements GroceryListAdapte
     // Implements the fragments by making objects
     BottomNavigationView bottomNavigationView;
 
-    FirstFragment firstFragment = new FirstFragment();
-    SecondFragment secondFragment = new SecondFragment();
-    ThirdFragment thirdFragment = new ThirdFragment();
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -102,5 +104,53 @@ public class MainActivity extends AppCompatActivity implements GroceryListAdapte
                 return true;
         }
         return false;
+    }
+
+    public static class Notifications extends AppCompatActivity {
+
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+            addNotification();
+
+            }
+
+        private void addNotification(){
+
+        String textTitle = "Refridge Item Expiration";
+        String textContent = "Your grocery" + "will expire in" + " ";
+
+            Intent notificationIntent = new Intent(this, MainActivity.class);
+            notificationIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            //notification message will get at NotificationView
+            notificationIntent.putExtra("message", "This is a notification message");
+
+            PendingIntent Intent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this,"My notification");
+                builder.setSmallIcon(R.drawable.ic_launcher_recipes);
+                builder.setContentTitle(textTitle);
+                builder.setContentText(textContent);
+                builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
+                // Set the intent that will fire when the user taps the notification
+                builder.setContentIntent(Intent);
+                builder.setAutoCancel(true);
+
+            builder.setContentIntent(Intent);
+
+            // Create the NotificationChannel, but only on API 26+ because
+            // the NotificationChannel class is new and not in the support library
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                NotificationChannel channel = new NotificationChannel("My notification", "My notify", NotificationManager.IMPORTANCE_DEFAULT);
+                // Register the channel with the system; you can't change the importance
+                // or other notification behaviors after this
+                NotificationManager notificationManager = getSystemService(NotificationManager.class);
+                notificationManager.createNotificationChannel(channel);
+            }
+
+            NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+    }
     }
 }
