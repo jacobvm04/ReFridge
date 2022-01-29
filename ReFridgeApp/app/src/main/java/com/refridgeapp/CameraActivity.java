@@ -1,17 +1,15 @@
 package com.refridgeapp;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.media.Image;
+import android.os.Build;
 import android.os.Bundle;
-import android.util.Size;
-import android.view.OrientationEventListener;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.camera.core.CameraSelector;
-import androidx.camera.core.ImageAnalysis;
 import androidx.camera.core.Preview;
 import androidx.camera.core.ImageCapture;
 import androidx.camera.core.ImageCaptureException;
@@ -31,11 +29,12 @@ import com.google.mlkit.vision.text.TextRecognition;
 import com.google.mlkit.vision.text.TextRecognizer;
 import com.google.mlkit.vision.text.latin.TextRecognizerOptions;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -97,9 +96,15 @@ public class CameraActivity extends AppCompatActivity {
                                     Task<Text> result =
                                             recognizer.process(image)
                                                     .addOnSuccessListener(new OnSuccessListener<Text>() {
+                                                        @RequiresApi(api = Build.VERSION_CODES.N)
                                                         @Override
                                                         public void onSuccess(Text visionText) {
-                                                            Log.d("tage", "message");
+                                                            String resultText = visionText.getText();
+                                                            //Log.d("Receipt", resultText);
+                                                            List<String> resultList = Receipt.getItemList(visionText);
+                                                            //Log.d("Receipt List", String.valueOf(resultList));
+                                                            // analyze text
+                                                            // dump text to database
                                                         }
                                                     })
                                                     .addOnFailureListener(
@@ -109,9 +114,8 @@ public class CameraActivity extends AppCompatActivity {
                                                                     // handle errors
                                                                 }
                                                             });
-                                }
-                                // analyze the result
 
+                                }
 
                                 // close the image
                                 imageProxy.close();
