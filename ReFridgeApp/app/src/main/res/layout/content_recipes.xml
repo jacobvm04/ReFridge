@@ -20,38 +20,53 @@
     <TextView
         android:id="@+id/TextFridge"
         android:layout_width="219dp"
-        android:layout_height="30dp"
-        android:layout_marginBottom="300dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="120dp"
         android:background="@null"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="text"
         android:text="Fridge Items"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomAppBar"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toTopOf="@+id/Generate_recipes_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="NotSibling" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/showItems"
-        android:layout_width="409dp"
-        android:layout_height="247dp"
+
+    <TextView
+        android:id="@+id/Itemsinfridge"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Items: \n Eggs\n Ham\n Broccolli\n Potatos\n Cheese \n Milk"
         app:layout_constraintBottom_toTopOf="@+id/Generate_recipes_button"
         app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TextFridge">
+        app:layout_constraintTop_toBottomOf="@+id/TextFridge" />
 
-    </androidx.recyclerview.widget.RecyclerView>
+    <TextView
+        android:id="@+id/ListofRecipes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:text="List of Recipes:\n 1. Potatoes au Gratin\n 2. Ham Sandwich\n 3. Smoothie\n 4. Broccolli Salad"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Generate_recipes_button" />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="-2dp">
+        app:layout_constraintVertical_bias="0.0">
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottomAppBar"

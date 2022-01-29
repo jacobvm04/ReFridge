@@ -22,10 +22,10 @@ public class RecipesActivity extends AppCompatActivity implements BottomNavigati
         setContentView(R.layout.content_recipes);
 
         // Setup recyclerView
-        recyclerView = findViewById(R.id.showItems);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
+//        recyclerView = findViewById(R.id.showItems);
+//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+//        recyclerView.setLayoutManager(layoutManager);
+//        recyclerView.setItemAnimator(new DefaultItemAnimator());
 
         BottomNavigationView bottomNavigationView;
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
