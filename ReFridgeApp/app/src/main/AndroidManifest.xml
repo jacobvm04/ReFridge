@@ -11,10 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ReFridgeApp">
         <activity
-            android:name=".Recipes"
-            android:exported="false"
-            android:label="@string/title_activity_recipes"
-            android:theme="@style/Theme.ReFridgeApp.NoActionBar" />
+            android:name=".account"
+            android:exported="false" />
+        <activity
+            android:name=".RecipesActivity"
+            android:exported="false" />
         <activity
             android:name=".AddGroceryActivity"
             android:exported="false"

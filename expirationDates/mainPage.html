@@ -1,0 +1,1565 @@
+<!doctype html>
+<html class="no-js" lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"8b2d3f96a7",applicationID:"303697815"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?p("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&p("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;p("lcp",[r])}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||p("cls",[t])})}function a(t){if(t instanceof g&&!y){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),y=!0,p("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=l.now(),p("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d,p=t("handle"),l=t("loader"),v=t(9),m=t(3),g=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(h){}s=new PerformanceObserver(i);try{s.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}d=new PerformanceObserver(o);try{d.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var y=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(t){document.addEventListener(t,a,m(!1))})}v(c)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){y[t]=m(t).concat(e)}function v(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:h,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!T++){var t=P.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+P.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+P.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,h="addEventListener",y="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1212.min.js"},M=w&&b&&b[h]&&!/CriOS/.test(navigator.userAgent),P=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:M,userAgent:s,disabled:E};if(!E){t(1),t(7),g[h]?(g[h]("DOMContentLoaded",o,l(!1)),m[h]("load",r,l(!1))):(g[y]("onreadystatechange",i),m[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var T=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="p:domain_verify" content="d65cd55c5d921f6b4b8e2fcd36cf11c3" />
+<link rel="preload" as="font" href="/wp-content/themes/pbh/public/fonts/GT-Walsheim-Bold.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="/wp-content/themes/pbh/public/fonts/GT-Walsheim-Regular.woff2" type="font/woff2" crossorigin>
+<title>Fruits &amp; Veggies - Have A Plant</title>
+<meta name='robots' content='max-image-preview:large' />
+
+<meta name="description" content="Nutrition, storage and handling information on a variety of fruits and vegetables. One look and you’ll see that eating a colorful variety of fruits and veggies provides a wide range of valuable nutrients." />
+<link rel="canonical" href="https://fruitsandveggies.org/fruits-and-veggies/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="object" />
+<meta property="og:title" content="Fruits &amp; Veggies - Have A Plant" />
+<meta property="og:description" content="Nutrition, storage and handling information on a variety of fruits and vegetables. One look and you’ll see that eating a colorful variety of fruits and veggies provides a wide range of valuable nutrients." />
+<meta property="og:url" content="https://fruitsandveggies.org/fruits-and-veggies/" />
+<meta property="og:site_name" content="Have A Plant" />
+<meta property="og:image" content="https://fruitsandveggies.org/wp-content/uploads/2019/04/PBH-social-share-2.jpg" />
+<meta property="og:image:secure_url" content="https://fruitsandveggies.org/wp-content/uploads/2019/04/PBH-social-share-2.jpg" />
+<meta property="og:image:width" content="1280" />
+<meta property="og:image:height" content="640" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Nutrition, storage and handling information on a variety of fruits and vegetables. One look and you’ll see that eating a colorful variety of fruits and veggies provides a wide range of valuable nutrients." />
+<meta name="twitter:title" content="Fruits &amp; Veggies - Have A Plant" />
+<meta name="twitter:image" content="https://fruitsandveggies.org/wp-content/uploads/2019/04/PBH-social-share-2.jpg" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://fruitsandveggies.org/#website","url":"https://fruitsandveggies.org/","name":"Have A Plant","potentialAction":{"@type":"SearchAction","target":"https://fruitsandveggies.org/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"CollectionPage","@id":"https://fruitsandveggies.org/fruits-and-veggies/#webpage","url":"https://fruitsandveggies.org/fruits-and-veggies/","inLanguage":"en-US","name":"Fruits &amp; Veggies Archive - Have A Plant","isPartOf":{"@id":"https://fruitsandveggies.org/#website"},"description":"Nutrition, storage and handling information on a variety of fruits and vegetables. One look and you\u2019ll see that eating a colorful variety of fruits and veggies provides a wide range of valuable nutrients. "}]}</script>
+
+<link rel='dns-prefetch' href='//fruitsandveggies.org' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='dns-prefetch' href='//v0.wordpress.com' />
+<link rel="alternate" type="application/rss+xml" title="Have A Plant &raquo; Fruits &amp; Veggies Feed" href="https://fruitsandveggies.org/fruits-and-veggies/feed/" />
+<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/fruitsandveggies.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8.1"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://fruitsandveggies.org/wp-includes/css/dist/block-library/style.min.css?ver=5.8.1' type='text/css' media='all' />
+<style id='wp-block-library-inline-css' type='text/css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel='stylesheet' id='mediaelement-css' href='https://fruitsandveggies.org/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.16' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-mediaelement-css' href='https://fruitsandveggies.org/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=5.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='_ning_font_awesome_css-css' href='https://fruitsandveggies.org/wp-content/plugins/angwp/assets/fonts/font-awesome/css/font-awesome.min.css?ver=1.6.2' type='text/css' media='all' />
+<link rel='stylesheet' id='_ning_css-css' href='https://fruitsandveggies.org/wp-content/plugins/angwp/assets/dist/angwp.bundle.js.css?ver=1.6.2' type='text/css' media='all' />
+<link rel='stylesheet' id='spr_col_animate_css-css' href='https://fruitsandveggies.org/wp-content/plugins/angwp/include/extensions/spr_columns/assets/css/animate.min.css?ver=1.6.2' type='text/css' media='all' />
+<link rel='stylesheet' id='spr_col_css-css' href='https://fruitsandveggies.org/wp-content/plugins/angwp/include/extensions/spr_columns/assets/css/spr_columns.css?ver=1.6.2' type='text/css' media='all' />
+<link rel='stylesheet' id='app-css' href='https://fruitsandveggies.org/wp-content/themes/pbh/public/css/app.css?ver=1641558705' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css' href='https://fruitsandveggies.org/wp-content/plugins/jetpack/css/jetpack.css?ver=10.1' type='text/css' media='all' />
+<script type='text/javascript' src='https://fruitsandveggies.org/wp-content/plugins/angwp/assets/dev/js/advertising.js?ver=5.8.1' id='adning_dummy_advertising-js'></script>
+<link rel="https://api.w.org/" href="https://fruitsandveggies.org/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://fruitsandveggies.org/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://fruitsandveggies.org/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 5.8.1" />
+
+<link rel='apple-touch-icon' sizes='57×57' href='https://fruitsandveggies.org/wp-content/themes/pbh/public/images/favicons/apple-icon-57x57.png'>
+<link rel='apple-touch-icon' sizes='60×60' href='https://fruitsandveggies.org/wp-content/themes/pbh/public/images/favicons/apple-icon-60x60.png'>
+<link rel='apple-touch-icon' sizes='72×72' href='https://fruitsandveggies.org/wp-content/themes/pbh/public/images/favicons/apple-icon-72x72.png'>
+<link rel='apple-touch-icon' sizes='76×76' href='https://fruitsandveggies.org/wp-content/themes/pbh/public/images/favicons/apple-icon-76x76.png'>
+<link rel='apple-touch-icon' sizes='114×114' href='https://fruitsandveggies.org/wp-content/themes/pbh/public/images/favicons/apple-icon-114x114.png'>
+<link rel='apple-touch-icon' sizes='120×120' href='https://fruitsandveggies.org/wp-content/themes/pbh/public/images/favicons/apple-icon-120x120.png'>
+<link rel='apple-touch-icon' sizes='144×144' href='https://fruitsandveggies.org/wp-content/themes/pbh/public/images/favicons/apple-icon-144x144.png'>
+<link rel='apple-touch-icon' sizes='152×152' href='https://fruitsandveggies.org/wp-content/themes/pbh/public/images/favicons/apple-icon-152x152.png'>
+<link rel='apple-touch-icon' sizes='180×180' href='https://fruitsandveggies.org/wp-content/themes/pbh/public/images/favicons/apple-icon-180x180.png'>
+<link rel='icon' type='image/png' href='https://fruitsandveggies.org/wp-content/themes/pbh/public/images/favicons/favicon-32x32.png' sizes='32×32'>
+<link rel='icon' type='image/png' href='https://fruitsandveggies.org/wp-content/themes/pbh/public/images/favicons/android-icon-192x192.png' sizes='192×192'>
+<link rel='icon' type='image/png' href='https://fruitsandveggies.org/wp-content/themes/pbh/public/images/favicons/favicon-96x96.png' sizes='96×96'>
+<link rel='icon' type='image/png' href='https://fruitsandveggies.org/wp-content/themes/pbh/public/images/favicons/favicon-16x16.png' sizes='16×16'>
+<meta name='msapplication-TileColor' content='#2b5797'>
+<meta name='msapplication-TileImage' content='https://fruitsandveggies.org/wp-content/themes/pbh/public/images/favicons/ms-icon-144x144.png'>
+
+<style></style>
+
+<script>
+    (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PWDJ5L7');
+    </script>
+
+<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+<body class="archive post-type-archive post-type-archive-ingredient" data-controller="offcanvas topbar list">
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWDJ5L7" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+<div class="alert-bar" data-controller="alert" data-target="alert.container" data-cookie-hash="d8e46be57c0ea70256540ccd12c6f1a2" style="background-color: #ff8300">
+<button class="alert-bar-close" data-action="alert#close">
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="close_title" class="icon icon-close" viewBox="0 0 20 20" width="20" height="20" stroke="#111111">
+<title id="close_small">Close</title>
+<g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" opacity=".8">
+<path d="M19 1L1 19M1 1l18 18"></path>
+</g>
+</svg>
+</button>
+<div class="alert-bar-content">
+<div class="alert-bar-description u-padding-right-base u-bold" style="color: #111111">
+Have A Plant®: The Plant-Forward Eating Guide </div>
+<div>
+<a class="button alert-button" href="https://fruitsandveggies.org/plant-forward-eating-guide/" style="background-color: #111111; color: #ffffff !important">
+Get Inspired </a>
+</div>
+</div>
+</div>
+<main id="app" class="app">
+<div class="off-canvas-wrapper-footer off-canvas-wrapper">
+<div class="off-canvas off-canvas-position-left u-color-black-background" data-target="offcanvas.component" data-offcanvas-component="main-navigation">
+<div class="off-canvas-header">
+<button class="off-canvas-button-close" data-action="offcanvas#close" data-target="offcanvas.closebutton" data-offcanvas-button="main-navigation">
+<span class="u-show-for-sr">Close</span>
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="close-small_title" class="icon icon-close-small" viewBox="0 0 20 20" width="20" height="20">
+<title id="close-small_title">Close</title>
+<g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" opacity=".8">
+<path d="M19 1L1 19M1 1l18 18" />
+</g>
+</svg>
+</button>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-labelledby="haveaplant-standonly" class="icon icon-haveaplant-standonly l-top-bar-logo-small" viewBox="0 0 168 26" xml:space="preserve">
+<title id="haveaplant-standonly">Have a Plant: Fruits &amp; Veggies for Better Health</title>
+<g>
+<path fill="#64B246" d="M9.1,5.9c3.4,0,5.2,1.9,5.2,5.7v8.6H9.7v-7.2c0-1.2-0.2-2.1-0.6-2.6c-0.4-0.5-1-0.8-1.9-0.8
+		c-0.9,0-1.6,0.3-2,0.8c-0.5,0.6-0.7,1.4-0.7,2.5v7.3H0V0h4.5v8.3c0.4-0.8,1-1.4,1.8-1.8C7.1,6.1,8,5.9,9.1,5.9L9.1,5.9z M22.6,20.6
+		c-1.4,0-2.6-0.3-3.6-1c-1-0.6-1.8-1.5-2.3-2.6c-0.5-1.1-0.8-2.4-0.8-3.8c0-1.4,0.3-2.6,0.8-3.8c0.5-1.1,1.3-2,2.4-2.6
+		c1-0.6,2.2-1,3.5-1c1,0,1.9,0.2,2.7,0.6c0.8,0.4,1.4,1,1.8,1.7v-2h4.5v13.9h-4.5v-2c-0.4,0.7-1,1.3-1.8,1.7
+		C24.5,20.4,23.6,20.6,22.6,20.6L22.6,20.6z M23.9,16.9c1.1,0,1.9-0.3,2.5-1c0.6-0.7,0.9-1.6,0.9-2.6c0-1-0.3-1.9-0.9-2.6
+		c-0.6-0.7-1.4-1-2.5-1c-1,0-1.8,0.3-2.4,1c-0.6,0.7-0.9,1.6-0.9,2.6s0.3,2,0.9,2.6C22.1,16.6,22.9,16.9,23.9,16.9L23.9,16.9z
+		 M32.5,6.3h5l3.2,8.8l3.2-8.8h5l-6.1,13.9h-4L32.5,6.3L32.5,6.3z M63,12.5c0,0.6,0,1.2-0.1,1.9H52.4c0,0.9,0.4,1.6,0.9,2.1
+		c0.6,0.5,1.4,0.7,2.4,0.7c1.4,0,2.3-0.4,2.6-1.2h4.4c-0.2,1.4-1,2.5-2.3,3.3c-1.3,0.8-2.9,1.3-4.8,1.3c-2.4,0-4.3-0.6-5.7-1.9
+		c-1.4-1.3-2.1-3.1-2.1-5.4c0-1.5,0.3-2.8,0.9-3.9c0.6-1.1,1.5-2,2.7-2.5c1.2-0.6,2.5-0.9,4-0.9c1.4,0,2.7,0.3,3.9,0.8
+		s2,1.3,2.6,2.3S63,11.2,63,12.5L63,12.5z M58.5,11.7c0-0.9-0.3-1.6-0.8-2.1c-0.5-0.5-1.2-0.7-2.2-0.7s-1.7,0.3-2.3,0.8
+		s-0.8,1.2-0.9,2.1L58.5,11.7L58.5,11.7z M76.6,20.6c-1.4,0-2.6-0.3-3.6-1c-1-0.6-1.8-1.5-2.3-2.6c-0.5-1.1-0.8-2.4-0.8-3.8
+		c0-1.4,0.3-2.6,0.8-3.8c0.5-1.1,1.3-2,2.4-2.6c1-0.6,2.2-1,3.5-1c1,0,1.9,0.2,2.7,0.6c0.8,0.4,1.4,1,1.8,1.7v-2h4.5v13.9h-4.5v-2
+		c-0.4,0.7-1,1.3-1.8,1.7C78.5,20.4,77.6,20.6,76.6,20.6L76.6,20.6z M77.9,16.9c1.1,0,1.9-0.3,2.5-1c0.6-0.7,0.9-1.6,0.9-2.6
+		c0-1-0.3-1.9-0.9-2.6c-0.6-0.7-1.4-1-2.5-1c-1,0-1.8,0.3-2.4,1s-0.9,1.6-0.9,2.6s0.3,2,0.9,2.6C76.1,16.6,76.9,16.9,77.9,16.9
+		L77.9,16.9z" />
+<path fill="#91368C" d="M103.9,5.9c1.3,0,2.4,0.3,3.4,0.9c1,0.6,1.8,1.5,2.3,2.6c0.5,1.1,0.8,2.4,0.8,3.8s-0.3,2.7-0.8,3.8
+		c-0.6,1.1-1.3,2-2.3,2.6c-1,0.6-2.2,0.9-3.4,0.9c-1,0-1.9-0.2-2.7-0.7s-1.4-1-1.8-1.7V26h-4.5V6.3h4.5v2c0.4-0.7,1-1.3,1.8-1.7
+		C101.9,6.1,102.8,5.9,103.9,5.9L103.9,5.9z M102.5,16.9c1,0,1.8-0.3,2.4-1c0.6-0.7,0.9-1.6,0.9-2.6s-0.3-2-0.9-2.6
+		c-0.6-0.7-1.4-1-2.4-1c-1,0-1.8,0.3-2.5,1s-0.9,1.6-0.9,2.6c0,1.1,0.3,2,1,2.7S101.5,16.9,102.5,16.9L102.5,16.9z M112.2,0h4.5
+		v20.2h-4.5V0z M125.2,20.6c-1.4,0-2.6-0.3-3.6-1c-1-0.6-1.8-1.5-2.3-2.6c-0.5-1.1-0.8-2.4-0.8-3.8c0-1.4,0.3-2.6,0.8-3.8
+		c0.5-1.1,1.3-2,2.4-2.6c1-0.6,2.2-1,3.5-1c1,0,1.9,0.2,2.7,0.6c0.8,0.4,1.4,1,1.8,1.7v-2h4.5v13.9h-4.5v-2c-0.4,0.7-1,1.3-1.8,1.7
+		C127.1,20.4,126.2,20.6,125.2,20.6z M126.5,16.9c1.1,0,1.9-0.3,2.5-1c0.6-0.7,0.9-1.6,0.9-2.6c0-1-0.3-1.9-0.9-2.6s-1.4-1-2.5-1
+		c-1,0-1.8,0.3-2.4,1c-0.6,0.7-0.9,1.6-0.9,2.6s0.3,2,0.9,2.6C124.7,16.6,125.5,16.9,126.5,16.9L126.5,16.9z M137.1,6.3h4.5v2
+		c0.4-0.8,1-1.4,1.8-1.8c0.8-0.4,1.7-0.6,2.8-0.6c3.4,0,5.2,1.9,5.2,5.7v8.6h-4.5v-7.2c0-1.2-0.2-2.1-0.6-2.6
+		c-0.4-0.5-1-0.8-1.9-0.8c-0.9,0-1.6,0.3-2,0.8c-0.5,0.6-0.7,1.4-0.7,2.5v7.3h-4.5L137.1,6.3L137.1,6.3z M161.4,16.8
+		c0.6,0,1.1,0,1.6-0.1v3.5c-0.9,0.2-1.9,0.2-3,0.2c-1.4,0-2.6-0.3-3.6-1c-1-0.7-1.4-2-1.4-4.1V9.8h-2.2V6.3h2.2V2.2h4.5v4.1h3.2v3.5
+		h-3.2v4.6c0,0.9,0.2,1.6,0.5,1.9C160.3,16.6,160.8,16.8,161.4,16.8L161.4,16.8z" />
+<g transform="translate(164 17)">
+<defs>
+<filter id="haveaplant-standonly-logo-mask-filter" filterUnits="userSpaceOnUse" x="-13" y="-17" width="12" height="21">
+<feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0" />
+</filter>
+</defs>
+<mask maskUnits="userSpaceOnUse" x="-13" y="-17" width="12" height="21" id="haveaplant-standonly-logo-mask__b_1_">
+<g filter="url(#haveaplant-standonly-logo-mask-filter)">
+<path id="haveaplant-standonly-logo-mask__a_1_" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M1,0h3v3H1V0z" />
+</g>
+</mask>
+<path mask="url(#haveaplant-standonly-logo-mask__b_1_)" fill-rule="evenodd" clip-rule="evenodd" fill="#91368C" d="M-1-0.3v4C-1.8,3.9-3,4-4.5,4
+			c-2.5,0-5.9-0.5-5.9-5.9v-6.4H-13v-4h2.6V-17h5.3v4.7h3.7v4h-3.7v5.3c0,2.4,1,2.7,2.3,2.7C-2.2-0.2-1.5-0.2-1-0.3" />
+<defs>
+<filter id="haveaplant-standonly-logo-mask-filter_1_" filterUnits="userSpaceOnUse" x="1" y="0" width="3" height="3">
+<feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0" />
+</filter>
+</defs>
+<mask maskUnits="userSpaceOnUse" x="1" y="0" width="3" height="3" id="haveaplant-standonly-logo-mask__d_1_">
+<g filter="url(#haveaplant-standonly-logo-mask-filter_1_)">
+<path id="haveaplant-standonly-logo-mask__c_1_" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M1,0h3v3H1V0z" />
+</g>
+</mask>
+<path mask="url(#haveaplant-standonly-logo-mask__d_1_)" fill-rule="evenodd" clip-rule="evenodd" fill="#91368C" d="M2.6,1.5c0.2,0,0.3-0.1,0.3-0.3
+			c0-0.2-0.1-0.3-0.3-0.3H2.2v0.6H2.6z M2,0.7h0.6c0.3,0,0.5,0.3,0.5,0.5c0,0.2-0.1,0.4-0.4,0.5l0.3,0.5H2.8L2.5,1.8H2.2v0.5H2
+			L2,0.7L2,0.7z M3.7,1.5c0-0.7-0.5-1.2-1.2-1.2c-0.7,0-1.2,0.6-1.2,1.2c0,0.7,0.5,1.2,1.2,1.2C3.2,2.7,3.7,2.2,3.7,1.5L3.7,1.5z
+			 M1,1.5C1,0.7,1.6,0,2.5,0C3.4,0,4,0.7,4,1.5S3.4,3,2.5,3C1.6,3,1,2.3,1,1.5z" />
+</g>
+</g>
+</svg>
+</div>
+<nav class="off-canvas-navigation">
+<ul class="u-list-nostyles" role="menu"><li id="menu-item-25749" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-25749"><a href="/fruits-and-veggies/" aria-current="page">Fruits &#038; Veggies</a></li>
+<li id="menu-item-59349" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59349"><a href="https://fruitsandveggies.org/series/">F&#038;V Inspo</a></li>
+<li id="menu-item-21609" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21609"><a href="/recipes/">Recipes</a></li>
+<li id="menu-item-20059" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20059"><a href="/expert-advice">Expert Advice</a></li>
+<li id="menu-item-56264" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56264"><a href="https://fruitsandveggies.org/stateoftheplatetoolkit/">State Of The Plate</a></li>
+</ul> </nav>
+<div class="off-canvas-footer">
+<a href="/account/login/?redirect=fruits-and-veggies" class="button button-secondary">Log In</a> <a href="/account/signup/?redirect=fruits-and-veggies" class="button button-green-dark">Sign Up</a>
+</div>
+</div>
+</div>
+<div class="l-top-bar" data-target="topbar.topbar">
+<header>
+<div class="l-top-bar-menu">
+<button class="off-canvas-button" data-action="offcanvas#open" data-target="offcanvas.openbutton" data-offcanvas-button="main-navigation">
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="menu_title" class="icon icon-menu" viewBox="0 0 20 14" width="20" height="14">
+<title id="menu_title">Menu</title>
+<g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+<path d="M1 7h18M1 1h18M1 13h18" />
+</g>
+</svg>
+</button>
+</div>
+<div class="l-top-bar-logo">
+<a href="/">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-labelledby="haveaplant-standonly" class="icon icon-haveaplant-standonly l-top-bar-logo-small" viewBox="0 0 168 26" xml:space="preserve">
+<title id="haveaplant-standonly">Have a Plant: Fruits &amp; Veggies for Better Health</title>
+<g>
+<path fill="#64B246" d="M9.1,5.9c3.4,0,5.2,1.9,5.2,5.7v8.6H9.7v-7.2c0-1.2-0.2-2.1-0.6-2.6c-0.4-0.5-1-0.8-1.9-0.8
+		c-0.9,0-1.6,0.3-2,0.8c-0.5,0.6-0.7,1.4-0.7,2.5v7.3H0V0h4.5v8.3c0.4-0.8,1-1.4,1.8-1.8C7.1,6.1,8,5.9,9.1,5.9L9.1,5.9z M22.6,20.6
+		c-1.4,0-2.6-0.3-3.6-1c-1-0.6-1.8-1.5-2.3-2.6c-0.5-1.1-0.8-2.4-0.8-3.8c0-1.4,0.3-2.6,0.8-3.8c0.5-1.1,1.3-2,2.4-2.6
+		c1-0.6,2.2-1,3.5-1c1,0,1.9,0.2,2.7,0.6c0.8,0.4,1.4,1,1.8,1.7v-2h4.5v13.9h-4.5v-2c-0.4,0.7-1,1.3-1.8,1.7
+		C24.5,20.4,23.6,20.6,22.6,20.6L22.6,20.6z M23.9,16.9c1.1,0,1.9-0.3,2.5-1c0.6-0.7,0.9-1.6,0.9-2.6c0-1-0.3-1.9-0.9-2.6
+		c-0.6-0.7-1.4-1-2.5-1c-1,0-1.8,0.3-2.4,1c-0.6,0.7-0.9,1.6-0.9,2.6s0.3,2,0.9,2.6C22.1,16.6,22.9,16.9,23.9,16.9L23.9,16.9z
+		 M32.5,6.3h5l3.2,8.8l3.2-8.8h5l-6.1,13.9h-4L32.5,6.3L32.5,6.3z M63,12.5c0,0.6,0,1.2-0.1,1.9H52.4c0,0.9,0.4,1.6,0.9,2.1
+		c0.6,0.5,1.4,0.7,2.4,0.7c1.4,0,2.3-0.4,2.6-1.2h4.4c-0.2,1.4-1,2.5-2.3,3.3c-1.3,0.8-2.9,1.3-4.8,1.3c-2.4,0-4.3-0.6-5.7-1.9
+		c-1.4-1.3-2.1-3.1-2.1-5.4c0-1.5,0.3-2.8,0.9-3.9c0.6-1.1,1.5-2,2.7-2.5c1.2-0.6,2.5-0.9,4-0.9c1.4,0,2.7,0.3,3.9,0.8
+		s2,1.3,2.6,2.3S63,11.2,63,12.5L63,12.5z M58.5,11.7c0-0.9-0.3-1.6-0.8-2.1c-0.5-0.5-1.2-0.7-2.2-0.7s-1.7,0.3-2.3,0.8
+		s-0.8,1.2-0.9,2.1L58.5,11.7L58.5,11.7z M76.6,20.6c-1.4,0-2.6-0.3-3.6-1c-1-0.6-1.8-1.5-2.3-2.6c-0.5-1.1-0.8-2.4-0.8-3.8
+		c0-1.4,0.3-2.6,0.8-3.8c0.5-1.1,1.3-2,2.4-2.6c1-0.6,2.2-1,3.5-1c1,0,1.9,0.2,2.7,0.6c0.8,0.4,1.4,1,1.8,1.7v-2h4.5v13.9h-4.5v-2
+		c-0.4,0.7-1,1.3-1.8,1.7C78.5,20.4,77.6,20.6,76.6,20.6L76.6,20.6z M77.9,16.9c1.1,0,1.9-0.3,2.5-1c0.6-0.7,0.9-1.6,0.9-2.6
+		c0-1-0.3-1.9-0.9-2.6c-0.6-0.7-1.4-1-2.5-1c-1,0-1.8,0.3-2.4,1s-0.9,1.6-0.9,2.6s0.3,2,0.9,2.6C76.1,16.6,76.9,16.9,77.9,16.9
+		L77.9,16.9z" />
+<path fill="#91368C" d="M103.9,5.9c1.3,0,2.4,0.3,3.4,0.9c1,0.6,1.8,1.5,2.3,2.6c0.5,1.1,0.8,2.4,0.8,3.8s-0.3,2.7-0.8,3.8
+		c-0.6,1.1-1.3,2-2.3,2.6c-1,0.6-2.2,0.9-3.4,0.9c-1,0-1.9-0.2-2.7-0.7s-1.4-1-1.8-1.7V26h-4.5V6.3h4.5v2c0.4-0.7,1-1.3,1.8-1.7
+		C101.9,6.1,102.8,5.9,103.9,5.9L103.9,5.9z M102.5,16.9c1,0,1.8-0.3,2.4-1c0.6-0.7,0.9-1.6,0.9-2.6s-0.3-2-0.9-2.6
+		c-0.6-0.7-1.4-1-2.4-1c-1,0-1.8,0.3-2.5,1s-0.9,1.6-0.9,2.6c0,1.1,0.3,2,1,2.7S101.5,16.9,102.5,16.9L102.5,16.9z M112.2,0h4.5
+		v20.2h-4.5V0z M125.2,20.6c-1.4,0-2.6-0.3-3.6-1c-1-0.6-1.8-1.5-2.3-2.6c-0.5-1.1-0.8-2.4-0.8-3.8c0-1.4,0.3-2.6,0.8-3.8
+		c0.5-1.1,1.3-2,2.4-2.6c1-0.6,2.2-1,3.5-1c1,0,1.9,0.2,2.7,0.6c0.8,0.4,1.4,1,1.8,1.7v-2h4.5v13.9h-4.5v-2c-0.4,0.7-1,1.3-1.8,1.7
+		C127.1,20.4,126.2,20.6,125.2,20.6z M126.5,16.9c1.1,0,1.9-0.3,2.5-1c0.6-0.7,0.9-1.6,0.9-2.6c0-1-0.3-1.9-0.9-2.6s-1.4-1-2.5-1
+		c-1,0-1.8,0.3-2.4,1c-0.6,0.7-0.9,1.6-0.9,2.6s0.3,2,0.9,2.6C124.7,16.6,125.5,16.9,126.5,16.9L126.5,16.9z M137.1,6.3h4.5v2
+		c0.4-0.8,1-1.4,1.8-1.8c0.8-0.4,1.7-0.6,2.8-0.6c3.4,0,5.2,1.9,5.2,5.7v8.6h-4.5v-7.2c0-1.2-0.2-2.1-0.6-2.6
+		c-0.4-0.5-1-0.8-1.9-0.8c-0.9,0-1.6,0.3-2,0.8c-0.5,0.6-0.7,1.4-0.7,2.5v7.3h-4.5L137.1,6.3L137.1,6.3z M161.4,16.8
+		c0.6,0,1.1,0,1.6-0.1v3.5c-0.9,0.2-1.9,0.2-3,0.2c-1.4,0-2.6-0.3-3.6-1c-1-0.7-1.4-2-1.4-4.1V9.8h-2.2V6.3h2.2V2.2h4.5v4.1h3.2v3.5
+		h-3.2v4.6c0,0.9,0.2,1.6,0.5,1.9C160.3,16.6,160.8,16.8,161.4,16.8L161.4,16.8z" />
+<g transform="translate(164 17)">
+<defs>
+<filter id="haveaplant-standonly-logo-mask-filter" filterUnits="userSpaceOnUse" x="-13" y="-17" width="12" height="21">
+<feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0" />
+</filter>
+</defs>
+<mask maskUnits="userSpaceOnUse" x="-13" y="-17" width="12" height="21" id="haveaplant-standonly-logo-mask__b_1_">
+<g filter="url(#haveaplant-standonly-logo-mask-filter)">
+<path id="haveaplant-standonly-logo-mask__a_1_" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M1,0h3v3H1V0z" />
+</g>
+</mask>
+<path mask="url(#haveaplant-standonly-logo-mask__b_1_)" fill-rule="evenodd" clip-rule="evenodd" fill="#91368C" d="M-1-0.3v4C-1.8,3.9-3,4-4.5,4
+			c-2.5,0-5.9-0.5-5.9-5.9v-6.4H-13v-4h2.6V-17h5.3v4.7h3.7v4h-3.7v5.3c0,2.4,1,2.7,2.3,2.7C-2.2-0.2-1.5-0.2-1-0.3" />
+<defs>
+<filter id="haveaplant-standonly-logo-mask-filter_1_" filterUnits="userSpaceOnUse" x="1" y="0" width="3" height="3">
+<feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0" />
+</filter>
+</defs>
+<mask maskUnits="userSpaceOnUse" x="1" y="0" width="3" height="3" id="haveaplant-standonly-logo-mask__d_1_">
+<g filter="url(#haveaplant-standonly-logo-mask-filter_1_)">
+<path id="haveaplant-standonly-logo-mask__c_1_" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M1,0h3v3H1V0z" />
+</g>
+</mask>
+<path mask="url(#haveaplant-standonly-logo-mask__d_1_)" fill-rule="evenodd" clip-rule="evenodd" fill="#91368C" d="M2.6,1.5c0.2,0,0.3-0.1,0.3-0.3
+			c0-0.2-0.1-0.3-0.3-0.3H2.2v0.6H2.6z M2,0.7h0.6c0.3,0,0.5,0.3,0.5,0.5c0,0.2-0.1,0.4-0.4,0.5l0.3,0.5H2.8L2.5,1.8H2.2v0.5H2
+			L2,0.7L2,0.7z M3.7,1.5c0-0.7-0.5-1.2-1.2-1.2c-0.7,0-1.2,0.6-1.2,1.2c0,0.7,0.5,1.2,1.2,1.2C3.2,2.7,3.7,2.2,3.7,1.5L3.7,1.5z
+			 M1,1.5C1,0.7,1.6,0,2.5,0C3.4,0,4,0.7,4,1.5S3.4,3,2.5,3C1.6,3,1,2.3,1,1.5z" />
+</g>
+</g>
+</svg>
+ <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon icon-haveaplant l-top-bar-logo-medium" role="img" aria-labelledby="haveaplant_title" viewBox="0 0 279.9 29.6" xml:space="preserve">
+<title id="haveaplant_title">Have a Plant: Fruits &amp; Veggies for Better Health</title>
+<g>
+<g transform="translate(2.338 1.561)">
+<defs>
+<filter id="haveaplant-logo-mask-filter" filterUnits="userSpaceOnUse" x="-2.3" y="-1.6" width="15.9" height="23">
+<feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0" />
+</filter>
+</defs>
+<mask maskUnits="userSpaceOnUse" x="-2.3" y="-1.6" width="15.9" height="23" id="haveaplant-logo-mask__b_1_">
+<g filter="url(#haveaplant-logo-mask-filter)">
+<path id="haveaplant-logo-mask__a_1_" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M-2.3-1.6h15.8v23H-2.3V-1.6z" />
+</g>
+</mask>
+<path mask="url(#haveaplant-logo-mask__b_1_)" fill-rule="evenodd" clip-rule="evenodd" fill="#5EA945" d="M13.6,11.7v9.8h-5v-8.1
+			c0-2.7-0.8-3.9-2.8-3.9c-2,0-3,1.3-3,3.7v8.3h-5v-23h5v9.5c0.9-1.8,2.7-2.7,5.1-2.7C11.6,5.2,13.6,7.3,13.6,11.7" />
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#5EA945" d="M28.4,13.5c0-2.3-1.3-4.1-3.8-4.1c-2.3,0-3.8,1.7-3.8,4.1
+			c0,2.4,1.4,4.2,3.8,4.2C27.1,17.7,28.4,15.8,28.4,13.5L28.4,13.5z M15.8,13.5c0-4.7,2.9-8.3,7.5-8.3c2.3,0,4.1,1.1,4.9,2.7V5.6h5
+			v15.8h-5v-2.2c-0.9,1.6-2.8,2.7-5,2.7C18.5,21.9,15.8,18.3,15.8,13.5z M34.5,5.6h5.5l3.5,10l3.5-10h5.6l-6.9,15.8h-4.5L34.5,5.6
+			 M63.9,11.8c0-2.1-1.2-3.2-3.3-3.2c-2.2,0-3.5,1.3-3.5,3.2H63.9z M68.7,14.9H57.1c0.1,2.1,1.5,3.2,3.7,3.2c1.5,0,2.5-0.4,3-1.4
+			h4.9c-0.5,3.1-3.7,5.2-7.9,5.2c-5.4,0-8.7-3.1-8.7-8.3c0-5.2,3.4-8.3,8.5-8.3c4.9,0,8.3,3.1,8.3,7.5C68.9,13.5,68.8,14,68.7,14.9z
+			" />
+<g transform="translate(79.148)">
+<defs>
+<filter id="haveaplant-logo-mask-filter_1_" filterUnits="userSpaceOnUse" x="-1.9" y="5.2" width="17.4" height="16.7">
+<feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0" />
+</filter>
+</defs>
+<mask maskUnits="userSpaceOnUse" x="-1.9" y="5.2" width="17.4" height="16.7" id="haveaplant-logo-mask__d_1_">
+<g filter="url(#haveaplant-logo-mask-filter_1_)">
+<path id="haveaplant-logo-mask__c_1_" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M-1.9-1.6h53.1V28H-1.9V-1.6z" />
+</g>
+</mask>
+<path mask="url(#haveaplant-logo-mask__d_1_)" fill-rule="evenodd" clip-rule="evenodd" fill="#5EA945" d="M10.8,13.5c0-2.3-1.3-4.1-3.8-4.1
+				c-2.3,0-3.8,1.7-3.8,4.1c0,2.4,1.4,4.2,3.8,4.2C9.5,17.7,10.8,15.8,10.8,13.5L10.8,13.5z M-1.9,13.5c0-4.7,2.9-8.3,7.5-8.3
+				c2.3,0,4.1,1.1,4.9,2.7V5.6h5v15.8h-5v-2.2c-0.9,1.6-2.8,2.7-5,2.7C0.8,21.9-1.9,18.3-1.9,13.5L-1.9,13.5z" />
+<defs>
+<filter id="haveaplant-logo-mask-filter_2_" filterUnits="userSpaceOnUse" x="26.4" y="-1.6" width="24.8" height="29.6">
+<feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0" />
+</filter>
+</defs>
+<mask maskUnits="userSpaceOnUse" x="26.4" y="-1.6" width="24.8" height="29.6" id="haveaplant-logo-mask__d_2_">
+<g filter="url(#haveaplant-logo-mask-filter_2_)">
+<path id="haveaplant-logo-mask__c_2_" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M-1.9-1.6h53.1V28H-1.9V-1.6z" />
+</g>
+</mask>
+<path mask="url(#haveaplant-logo-mask__d_2_)" fill-rule="evenodd" clip-rule="evenodd" fill="#91368C" d="M39.7,13.3c0-2.3-1.6-3.9-3.9-3.9
+				c-2.3,0-3.9,1.6-3.9,3.9c0,2.3,1.6,3.9,3.9,3.9C38.1,17.2,39.7,15.6,39.7,13.3z M36.4,21.9c-2.3,0-4.2-1.2-5-2.7V28h-5V5.6h5v2.3
+				c0.9-1.5,2.8-2.7,5.2-2.7c4.3,0,7.3,3.4,7.3,8.3C43.8,18.5,40.7,21.9,36.4,21.9L36.4,21.9z M46.2,21.4h5v-23h-5V21.4z" />
+</g>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#91368C" d="M144.5,13.5c0-2.3-1.3-4.1-3.8-4.1c-2.3,0-3.8,1.7-3.8,4.1
+			c0,2.4,1.4,4.2,3.8,4.2C143.2,17.7,144.5,15.8,144.5,13.5z M132.6,13.5c0-4.7,2.9-8.3,7.5-8.3c2.3,0,4.1,1.1,4.9,2.7V5.6h5v15.8
+			h-5v-2.2c-0.9,1.6-2.8,2.7-5,2.7C135.4,21.9,132.6,18.3,132.6,13.5z M153.6,5.6h5v2.3c0.9-1.8,2.7-2.7,5.1-2.7
+			c3.8,0,5.8,2.2,5.8,6.5v9.8h-5v-8.1c0-2.7-0.8-3.9-2.8-3.9c-2,0-3,1.3-3,3.7v8.3h-5V5.6 M182.6,17.4v4c-0.7,0.1-1.9,0.3-3.3,0.3
+			c-2.4,0-5.6-0.5-5.6-5.8V9.6h-2.5v-4h2.5V0.9h5v4.7h3.6v4h-3.6v5.3c0,2.3,0.9,2.7,2.2,2.7C181.4,17.5,182.1,17.5,182.6,17.4" />
+<path fill-rule="evenodd" clip-rule="evenodd" d="M195,6.9V8h2.3v1.4H195v2.4h-1.5V5.5h4.3v1.4H195 M201.1,6.9h-0.9v1.3h0.9
+			c0.4,0,0.7-0.3,0.7-0.6C201.8,7.2,201.6,6.9,201.1,6.9z M201.9,11.8l-1.1-2.3h-0.5v2.3h-1.5V5.5h2.5c1.4,0,2.1,1,2.1,2
+			c0,0.9-0.5,1.4-1,1.6l1.4,2.6L201.9,11.8L201.9,11.8z M206.7,11.8c-1.3,0-2.4-0.9-2.4-2.3V5.5h1.5v4c0,0.6,0.3,0.9,0.8,0.9
+			s0.8-0.3,0.8-0.9v-4h1.5v4.1C209.1,11,208,11.8,206.7,11.8 M210.3,11.8h1.5V5.5h-1.5V11.8z M215.8,6.9v4.9h-1.5V6.9h-1.5V5.5h4.6
+			v1.4H215.8 M220,11.8c-1,0-1.7-0.2-2.4-0.8l1-1c0.3,0.3,0.9,0.4,1.4,0.4c0.6,0,0.9-0.2,0.9-0.6c0-0.1,0-0.3-0.1-0.4
+			c-0.1-0.1-0.2-0.1-0.4-0.2l-0.8-0.1c-0.6-0.1-1-0.3-1.3-0.6c-0.3-0.3-0.4-0.7-0.4-1.3c0-1.1,0.9-2,2.3-2c0.9,0,1.6,0.2,2.1,0.8
+			l-1,1c-0.3-0.3-0.7-0.4-1.2-0.4c-0.5,0-0.8,0.3-0.8,0.6c0,0.1,0,0.2,0.1,0.3c0.1,0.1,0.2,0.2,0.4,0.2l0.8,0.1
+			c0.6,0.1,1,0.3,1.2,0.5c0.3,0.3,0.5,0.8,0.5,1.4C222.4,11.1,221.3,11.8,220,11.8 M227.4,6.7c-0.3,0-0.4,0.2-0.4,0.4
+			c0,0.1,0.1,0.3,0.3,0.5l0.2-0.1c0.1-0.1,0.2-0.2,0.2-0.4C227.8,6.8,227.7,6.7,227.4,6.7L227.4,6.7z M226.9,9.2
+			c-0.3,0.2-0.4,0.4-0.4,0.7c0,0.4,0.3,0.7,0.7,0.7c0.3,0,0.5-0.1,0.6-0.2L226.9,9.2z M229.1,11.8l-0.4-0.5
+			c-0.3,0.3-0.7,0.5-1.5,0.5c-1.5,0-2.1-0.7-2.1-2c0-0.7,0.5-1.3,1-1.6c-0.2-0.2-0.6-0.7-0.6-1.3c0-0.9,0.6-1.6,1.8-1.6
+			c1.1,0,1.8,0.7,1.8,1.6c0,0.5-0.3,0.8-0.8,1.2l-0.3,0.2l0.7,0.9c0.2-0.2,0.3-0.6,0.3-0.9h1.4c-0.1,0.8-0.3,1.5-0.7,2l1.2,1.4
+			H229.1z M236.1,11.8H235l-2.1-6.3h1.6l1.1,3.5l1-3.5h1.6L236.1,11.8 M238.8,11.8V5.5h4.3v1.4h-2.7v1h2.3v1.4h-2.3v1.1h2.7v1.4
+			H238.8 M248.2,11.1c-0.5,0.6-1.1,0.7-1.8,0.7c-0.8,0-1.3-0.2-1.7-0.7c-0.6-0.6-0.6-1.4-0.6-2.5c0-1.1,0-1.9,0.6-2.5
+			c0.4-0.4,1-0.7,1.7-0.7c1.6,0,2.3,1,2.4,2.1h-1.5c-0.1-0.5-0.4-0.7-0.9-0.7c-0.3,0-0.5,0.1-0.6,0.3c-0.1,0.2-0.2,0.4-0.2,1.5
+			s0.1,1.4,0.2,1.6c0.1,0.1,0.3,0.3,0.6,0.3c0.3,0,0.5-0.1,0.7-0.2c0.2-0.2,0.2-0.4,0.2-0.7V9.5h-0.9V8.2h2.5V9
+			C248.8,10.1,248.6,10.6,248.2,11.1 M253.9,11.1c-0.5,0.6-1.1,0.7-1.8,0.7c-0.8,0-1.3-0.2-1.7-0.7c-0.6-0.6-0.6-1.4-0.6-2.5
+			c0-1.1,0-1.9,0.6-2.5c0.4-0.4,1-0.7,1.7-0.7c1.6,0,2.3,1,2.4,2.1H253c-0.1-0.5-0.4-0.7-0.9-0.7c-0.3,0-0.5,0.1-0.6,0.3
+			c-0.1,0.2-0.2,0.4-0.2,1.5s0.1,1.4,0.2,1.6c0.1,0.1,0.3,0.3,0.6,0.3c0.3,0,0.5-0.1,0.7-0.2c0.2-0.2,0.2-0.4,0.2-0.7V9.5h-0.9V8.2
+			h2.5V9C254.5,10.1,254.4,10.6,253.9,11.1 M255.6,11.8h1.5V5.5h-1.5V11.8z M258.4,11.8V5.5h4.3v1.4h-2.7v1h2.3v1.4h-2.3v1.1h2.7
+			v1.4H258.4 M265.5,11.8c-1,0-1.7-0.2-2.4-0.8l1-1c0.3,0.3,0.9,0.4,1.4,0.4c0.6,0,0.9-0.2,0.9-0.6c0-0.1,0-0.3-0.1-0.4
+			c-0.1-0.1-0.2-0.1-0.4-0.2l-0.8-0.1c-0.6-0.1-1-0.3-1.3-0.6c-0.3-0.3-0.4-0.7-0.4-1.3c0-1.1,0.9-2,2.3-2c0.9,0,1.6,0.2,2.1,0.8
+			l-1,1c-0.3-0.3-0.7-0.4-1.2-0.4c-0.5,0-0.8,0.3-0.8,0.6c0,0.1,0,0.2,0.1,0.3c0.1,0.1,0.2,0.2,0.4,0.2l0.8,0.1
+			c0.6,0.1,1,0.3,1.2,0.5c0.3,0.3,0.5,0.8,0.5,1.4C268,11.1,266.9,11.8,265.5,11.8 M195,16.5v1.1h2.3V19H195v2.4h-1.5v-6.3h4.3v1.4
+			H195 M201.4,16.7c-0.1-0.1-0.3-0.3-0.6-0.3c-0.3,0-0.5,0.1-0.6,0.3c-0.1,0.2-0.2,0.4-0.2,1.5c0,1.1,0.1,1.4,0.2,1.5
+			c0.1,0.1,0.3,0.3,0.6,0.3c0.3,0,0.5-0.1,0.6-0.3c0.1-0.2,0.2-0.4,0.2-1.5C201.6,17.1,201.5,16.9,201.4,16.7z M202.5,20.8
+			c-0.4,0.5-1,0.7-1.7,0.7s-1.3-0.2-1.7-0.7c-0.6-0.6-0.6-1.4-0.6-2.5c0-1.1,0-1.9,0.6-2.5c0.4-0.5,1-0.7,1.7-0.7s1.3,0.2,1.7,0.7
+			c0.6,0.6,0.6,1.4,0.6,2.5C203.1,19.3,203.1,20.1,202.5,20.8z M206.6,16.5h-0.9v1.3h0.9c0.4,0,0.7-0.3,0.7-0.6
+			C207.3,16.8,207,16.5,206.6,16.5z M207.4,21.4l-1.1-2.3h-0.5v2.3h-1.5v-6.3h2.5c1.4,0,2.1,1,2.1,2c0,0.9-0.5,1.4-1,1.6l1.4,2.6
+			L207.4,21.4L207.4,21.4z M214.5,18.9h-1V20h1c0.4,0,0.6-0.3,0.6-0.6C215,19.2,214.9,18.9,214.5,18.9z M214.4,16.5h-1v1h1
+			c0.4,0,0.6-0.3,0.6-0.5C214.9,16.8,214.8,16.5,214.4,16.5z M214.6,21.4h-2.7v-6.3h2.6c1.3,0,2,0.7,2,1.8c0,0.7-0.5,1.1-0.7,1.2
+			c0.3,0.2,0.8,0.5,0.8,1.4C216.6,20.7,215.7,21.4,214.6,21.4z M217.6,21.4v-6.3h4.3v1.4h-2.7v1h2.3v1.4h-2.3V20h2.7v1.4H217.6
+			 M225.7,16.5v4.9h-1.5v-4.9h-1.5v-1.4h4.6v1.4H225.7 M230.8,16.5v4.9h-1.5v-4.9h-1.5v-1.4h4.6v1.4H230.8 M233.3,21.4v-6.3h4.3v1.4
+			h-2.7v1h2.3v1.4h-2.3V20h2.7v1.4H233.3 M241,16.5h-0.9v1.3h0.9c0.4,0,0.7-0.3,0.7-0.6C241.7,16.8,241.4,16.5,241,16.5z
+			 M241.8,21.4l-1.1-2.3h-0.5v2.3h-1.5v-6.3h2.5c1.4,0,2.1,1,2.1,2c0,0.9-0.5,1.4-1,1.6l1.4,2.6L241.8,21.4L241.8,21.4z M249.5,21.4
+			v-2.5h-1.6v2.5h-1.5v-6.3h1.5v2.4h1.6v-2.4h1.5v6.3H249.5 M252.3,21.4v-6.3h4.3v1.4h-2.7v1h2.3v1.4h-2.3V20h2.7v1.4H252.3
+			 M259.9,17.5l-0.6,1.7h1.1L259.9,17.5L259.9,17.5z M261.1,21.4l-0.3-0.9h-1.9l-0.3,0.9H257l2.3-6.3h1.2l2.3,6.3H261.1L261.1,21.4z
+			 M263.4,21.4v-6.3h1.5V20h2.6v1.4H263.4 M270.4,16.5v4.9h-1.5v-4.9h-1.5v-1.4h4.6v1.4H270.4 M276,21.4v-2.5h-1.6v2.5h-1.5v-6.3
+			h1.5v2.4h1.6v-2.4h1.5v6.3H276" />
+</g>
+<g transform="translate(188.636 21.073)">
+<defs>
+<filter id="haveaplant-logo-mask-filter_3_" filterUnits="userSpaceOnUse" x="-15.2" y="-18.6" width="11.4" height="20.8">
+<feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0" />
+</filter>
+</defs>
+<mask maskUnits="userSpaceOnUse" x="-15.2" y="-18.6" width="11.4" height="20.8" id="haveaplant-logo-mask__f_1_">
+<g filter="url(#haveaplant-logo-mask-filter_3_)">
+<path id="haveaplant-logo-mask__e_1_" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M-2-1.4h3.3v3.4H-2V-1.4z" />
+</g>
+</mask>
+<path mask="url(#haveaplant-logo-mask__f_1_)" fill-rule="evenodd" clip-rule="evenodd" fill="#91368C" d="M-3.7-2.1v4c-0.7,0.1-1.9,0.3-3.3,0.3
+			c-2.4,0-5.6-0.5-5.6-5.8v-6.3h-2.5v-4h2.5v-4.7h5v4.7h3.6v4h-3.6v5.3C-7.7-2.3-6.7-2-5.5-2C-4.9-2-4.2-2-3.7-2.1" />
+<defs>
+<filter id="haveaplant-logo-mask-filter_4_" filterUnits="userSpaceOnUse" x="-2" y="-1.4" width="3.3" height="3.4">
+<feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0" />
+</filter>
+</defs>
+<mask maskUnits="userSpaceOnUse" x="-2" y="-1.4" width="3.3" height="3.4" id="haveaplant-logo-mask__h_1_">
+<g filter="url(#haveaplant-logo-mask-filter_4_)">
+<path id="haveaplant-logo-mask__g_1_" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M-2-1.4h3.3v3.4H-2V-1.4z" />
+</g>
+</mask>
+<path mask="url(#haveaplant-logo-mask__h_1_)" fill-rule="evenodd" clip-rule="evenodd" fill="#91368C" d="M-0.3,0.3C-0.1,0.3,0,0.1,0,0
+			c0-0.2-0.1-0.4-0.3-0.4h-0.4v0.7C-0.7,0.3-0.3,0.3-0.3,0.3z M-1-0.7h0.7c0.4,0,0.6,0.3,0.6,0.6c0,0.3-0.1,0.5-0.4,0.6l0.4,0.6H0
+			l-0.4-0.6h-0.3v0.6H-1L-1-0.7L-1-0.7z M0.9,0.3c0-0.8-0.5-1.4-1.3-1.4c-0.8,0-1.3,0.6-1.3,1.4c0,0.8,0.5,1.4,1.3,1.4
+			C0.4,1.7,0.9,1,0.9,0.3z M-2,0.3c0-0.9,0.6-1.7,1.7-1.7c1,0,1.7,0.7,1.7,1.7S0.6,1.9-0.4,1.9C-1.4,1.9-2,1.2-2,0.3z" />
+</g>
+</g>
+</svg>
+</a>
+</div>
+<div class="l-top-bar-navigation">
+<nav class="main-navigation">
+<ul class="u-list-nostyles" role="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-25749"><a href="/fruits-and-veggies/" aria-current="page">Fruits &#038; Veggies</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59349"><a href="https://fruitsandveggies.org/series/">F&#038;V Inspo</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21609"><a href="/recipes/">Recipes</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20059"><a href="/expert-advice">Expert Advice</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56264"><a href="https://fruitsandveggies.org/stateoftheplatetoolkit/">State Of The Plate</a></li>
+</ul> </nav>
+</div>
+<div class="l-top-bar-actions">
+<ul class="u-list-nostyles u-flex u-align-items-center">
+<li class="l-top-bar-actions-signup"><a href="/account/signup/?redirect=fruits-and-veggies" class="u-color-grey">Sign Up</a></li>
+<li class="l-top-bar-actions-login"><a href="/account/login/?redirect=fruits-and-veggies" class="u-color-grey">Log In</a></li>
+<li class="l-top-bar-actions-search">
+<button class="u-color-grey searchbar-button-toggle-visibility" data-action="topbar#toggle" data-target="topbar.toggle">
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="search-small_title" class="icon icon-search-small" viewBox="0 0 20 21" width="20" height="21">
+<title id="search-small_title">Search</title>
+<g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="translate(1 1.4)">
+<ellipse cx="7.5" cy="7.594" rx="7.5" ry="7.594" />
+<path d="M18 18.225l-5.2-5.265" />
+</g>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="close_title" class="icon icon-close" viewBox="0 0 20 20" width="20" height="20">
+<title id="close_small">Close</title>
+<g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" opacity=".8">
+<path d="M19 1L1 19M1 1l18 18" />
+</g>
+</svg>
+<span class="u-show-for-sr">Search</span>
+</button>
+</li>
+</ul>
+</div>
+</header>
+<div class="searchbar" data-target="topbar.searchbar">
+<form class="searchbar-form" role="search" method="get" action="https://fruitsandveggies.org/">
+<div>
+<fieldset class="u-flex u-align-items-center">
+<button class="searchbar-button-submit" type="submit" id="searchsubmit">
+<span class="u-show-for-sr">Search</span>
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="search-small_title" class="icon icon-search-small" viewBox="0 0 20 21" width="20" height="21">
+<title id="search-small_title">Search</title>
+<g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="translate(1 1.4)">
+<ellipse cx="7.5" cy="7.594" rx="7.5" ry="7.594" />
+<path d="M18 18.225l-5.2-5.265" />
+</g>
+</svg>
+</button>
+<input type="search" class="searchbar-input" name="s" id="s">
+</fieldset>
+<fieldset class='u-paragraph-small u-margin-top-base u-color-grey-dark'>
+<legend><b>Filter By:</b></legend>
+<div class='checkbox-filters l-cluster u-margin-top-xxsmall'>
+<div>
+<label class="checkbox-filter-label u-margin-right-xsmall">
+<input class="checkbox-filter" type="checkbox" name="post_type[]" value="recipe"> Recipe
+</label>
+<label class="checkbox-filter-label u-margin-right-xsmall">
+<input class="checkbox-filter" type="checkbox" name="post_type[]" value="story"> Story
+</label>
+<label class="checkbox-filter-label u-margin-right-xsmall">
+<input class="checkbox-filter" type="checkbox" name="post_type[]" value="ingredient"> Ingredient
+</label>
+<label class="checkbox-filter-label u-margin-right-xsmall">
+<input class="checkbox-filter" type="checkbox" name="post_type[]" value="news"> News
+</label>
+<label class="checkbox-filter-label">
+<input class="checkbox-filter" type="checkbox" name="post_type[]" value="expert-advice"> Expert Advice
+</label>
+</div>
+</div>
+</fieldset> </div>
+</form>
+</div>
+</div>
+<section id="ingredients_top">
+<div class="ingredient-header">
+<header class="u-color-grey-light-background u-padding-vertical-large u-padding-vertical-xxlarge-1024 offset-background-bottom">
+<div class="l-container-xlarge l-grid u-justify-between u-align-items-center u-padding-vertical-medium">
+<h1 class="l-grid-item-small-auto u-padding-bottom-small u-padding-top-small-1024">
+Fruits & Veggies </h1>
+<p class="u-color-grey-dark l-grid-item-small-7 u-margin-bottom-0"> Nutrition, storage and handling information on a variety of fruits and vegetables. One look and you’ll see that eating a colorful variety of fruits and veggies provides a wide range of valuable nutrients. </p> </div>
+</header>
+</div>
+<nav class="ingredient-list-navigation">
+<ul>
+<li><a href="#ingredient-list-a">A</a></li><li><a href="#ingredient-list-b">B</a></li><li><a href="#ingredient-list-c">C</a></li><li><a href="#ingredient-list-d">D</a></li><li><a href="#ingredient-list-e">E</a></li><li><a href="#ingredient-list-f">F</a></li><li><a href="#ingredient-list-g">G</a></li><li><a href="#ingredient-list-h">H</a></li><li><a href="#ingredient-list-i">I</a></li><li><a href="#ingredient-list-j">J</a></li><li><a href="#ingredient-list-k">K</a></li><li><a href="#ingredient-list-l">L</a></li><li><a href="#ingredient-list-m">M</a></li><li><a href="#ingredient-list-n">N</a></li><li><a href="#ingredient-list-o">O</a></li><li><a href="#ingredient-list-p">P</a></li><li><a href="#ingredient-list-q">Q</a></li><li><a href="#ingredient-list-r">R</a></li><li><a href="#ingredient-list-s">S</a></li><li><a href="#ingredient-list-t">T</a></li><li><a href="#ingredient-list-u">U</a></li><li><a href="#ingredient-list-v">V</a></li><li><a href="#ingredient-list-w">W</a></li><li><a href="#ingredient-list-y">Y</a></li><li><a href="#ingredient-list-z">Z</a></li> </ul>
+</nav>
+<div class="l-container-xlarge u-padding-top-xxlarge">
+<div class="ingredient-list" id="ingredient-list-a">
+<div class="ingredient-list-header">
+<span class="u-color-green u-h1">A</span>
+</div>
+<div class="ingredient-list-items">
+<ul class="u-list-nostyles">
+<li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/acorn-squash/">Acorn Squash</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/almonds/">Almonds</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/amaranth-nutrition-selection-storage/">Amaranth</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/anaheim-chili-peppers-nutrition-selection-storage/">Anaheim Chile</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/apple/">Apple</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/apricots/">Apricots</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/armenian-cucumber-nutrition-selection-storage/">Armenian Cucumber</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/arrowroot-nutrition-selection-storage/">Arrowroot</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/artichoke/">Artichoke</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/arugula/">Arugula</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/asian-pears-nutrition-selection-storage/">Asian Pears</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/asparagus/">Asparagus</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/avocado/">Avocado</a>
+</li> </ul>
+</div>
+<div class="ingredient-list-footer">
+<a href="#ingredients_top" class="u-overline">Back to top</a>
+</div>
+</div>
+<div class="ingredient-list" id="ingredient-list-b">
+<div class="ingredient-list-header">
+<span class="u-color-green u-h1">B</span>
+</div>
+<div class="ingredient-list-items">
+<ul class="u-list-nostyles">
+<li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/baby-candy-cane-beets-nutrition-selection-storage/">Baby Candy Cane Beets</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/baby-oyster-mushrooms-nutrition-selection-storage/">Baby Oyster Mushrooms</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/banana/">Banana</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/banana-squash-nutrition-selection-storage/">Banana Squash</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/barbados-cherries-nutrition-selection-storage/">Barbados Cherries</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/beets/">Beets</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/belgian-endive/">Belgian Endive</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/bell-peppers/">Bell Peppers</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/bitter-melon-nutrition-selection-storage/">Bitter Melon</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/black-beans/">Black Beans</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/black-crowberry-nutrition-selection-storage/">Black Crowberry</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/black-currants-nutrition-selection-storage/">Black Currants</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/black-eyed-peas-nutrition-selection-storage/">Black Eyed Peas</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/black-nectar-plumcots-nutrition-selection-storage/">Black Nectar Plumcots</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/black-radish-nutrition-selection-storage/">Black Radish</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/black-salsify-nutrition-selection-storage/">Black Salsify</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/blackberries/">Blackberries</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/blood-orange/">Blood Orange</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/blueberries/">Blueberries</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/bok-choy/">Bok Choy</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/boniato-nutrition-selection-storage/">Boniato</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/boysenberries-nutrition-selection-storage/">Boysenberries</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/brazil-nuts/">Brazil Nuts</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/breadfruit-nutrition-selection-storage/">Breadfruit</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/broccoflower/">Broccoflower</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/broccoli/">Broccoli</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/broccoli-rabe/">Broccoli Rabe</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/broccolini/">Broccolini</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/brown-turkey-figs-nutrition-selection-storage/">Brown Turkey Figs</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/brussels-sprouts/">Brussels Sprouts</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/burdock-root-nutrition-selection-storage/">Burdock Root</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/butter-lettuce/">Butter Lettuce</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/buttercup-squash-nutrition-selection-storage/">Buttercup Squash</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/butternut-squash/">Butternut Squash</a>
+</li> </ul>
+</div>
+<div class="ingredient-list-footer">
+<a href="#ingredients_top" class="u-overline">Back to top</a>
+</div>
+</div>
+<div class="ingredient-list" id="ingredient-list-c">
+<div class="ingredient-list-header">
+<span class="u-color-green u-h1">C</span>
+</div>
+<div class="ingredient-list-items">
+<ul class="u-list-nostyles">
+<li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/cactus-nutrition-selection-storage/">Cactus</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/cactus-pear-nutrition-selection-storage/">Cactus Pear</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/canary-melon-nutrition-selection-storage/">Canary Melon</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/canned-vegetables/">Canned Vegetables</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/cantaloupe/">Cantaloupe</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/cape-gooseberry-nutrition-selection-storage/">Cape Gooseberry</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/cara-cara-navel-orange-nutrition-selection-storage/">Cara Cara Navel Orange</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/cardoon-nutrition-selection-storage/">Cardoon</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/caribbean-june-plum-nutrition-selection-storage/">Caribbean June Plum</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/carissa-nutrition-selection-storage/">Carissa</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/carnival-squash-nutrition-selection-storage/">Carnival Squash</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/carrots/">Carrots</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/casaba-melon/">Casaba Melon</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/cashews/">Cashews</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/cauliflower/">Cauliflower</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/celeriac-nutrition-selection-storage/">Celeriac</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/celery/">Celery</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/champagne-grapes-nutrition-selection-storage/">Champagne Grapes</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/chayote-squash/">Chayote Squash</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/cherimoya/">Cherimoya</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/sour-cherry-nutrition-selection-storage/">Cherries (Sour)</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/cherries/">Cherries (Sweet)</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/cherry-tomatoes-nutrition-selection-storage/">Cherry Tomatoes</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/chestnuts-nutrition-selection-storage/">Chestnuts</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/chickpeas-garbanzo-beans/">Chickpeas (Garbanzo Beans)</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/chinese-eggplants-nutrition-selection-storage/">Chinese Eggplants</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/chinese-leeks-nutrition-selection-storage/">Chinese Leeks</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/chinese-long-beans-nutrition-selection-storage/">Chinese Long Beans</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/chokecherries-nutrition-selection-storage/">Chokecherries</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/choy-sum-nutrition-selection-storage/">Choy Sum</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/cipolline-onions-nutrition-selection-storage/">Cipolline Onions</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/clementine-nutrition-selection-storage/">Clementine</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/coconut/">Coconut</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/collard-greens/">Collard Greens</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/grape-juice-100-nutrition-selection-storage/">Concord Grape Juice (100%)</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/concord-grapes-nutrition-selection-storage/">Concord Grapes</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/sweet-corn/">Corn</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/corn-salad-nutrition-selection-storage/">Corn Salad</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/cotton-candy-grapes-nutrition-selection-storage/">Cotton Candy Grapes</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/crab-apples-nutrition-selection-storage/">Crab Apples</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/cranberries/">Cranberries</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/cranberry-beans-nutrition-selection-storage/">Cranberry Beans</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/crenshaw-melon-nutrition-selection-storage/">Crenshaw Melon</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/crimini-mushroom/">Crimini Mushroom</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/crookneck-squash-nutrition-selection-storage/">Crookneck Squash</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/cucumber/">Cucumber</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/custard-apple-nutrition-selection-storage/">Custard Apple</a>
+</li> </ul>
+</div>
+<div class="ingredient-list-footer">
+<a href="#ingredients_top" class="u-overline">Back to top</a>
+</div>
+</div>
+<div class="ingredient-list" id="ingredient-list-d">
+<div class="ingredient-list-header">
+<span class="u-color-green u-h1">D</span>
+</div>
+<div class="ingredient-list-items">
+<ul class="u-list-nostyles">
+<li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/dagen-sugar-plums-nutrition-selection-storage/">D’Agen Sugar Plums</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/daikon-radish/">Daikon Radish</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/dandelion-greens-nutrition-selection-storage/">Dandelion Greens</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/date-plum-nutrition-selection-storage/">Date Plum</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/dates/">Dates</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/delicata-squash-nutrition-selection-storage/">Delicata Squash</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/dried-apricots-nutrition-selection-storage/">Dried Apricots</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/dried-cranberries-nutrition-selection-storage/">Dried Cranberries</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/fig-dried/">Dried Figs</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/durian/">Durian</a>
+</li> </ul>
+</div>
+<div class="ingredient-list-footer">
+<a href="#ingredients_top" class="u-overline">Back to top</a>
+</div>
+</div>
+<div class="ingredient-list" id="ingredient-list-e">
+<div class="ingredient-list-header">
+<span class="u-color-green u-h1">E</span>
+</div>
+<div class="ingredient-list-items">
+<ul class="u-list-nostyles">
+<li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/eggplant/">Eggplant</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/elderberries-nutrition-selection-storage/">Elderberries</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/endive/">Endive</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/enoki-mushrooms-nutrition-selection-storage/">Enoki Mushrooms</a>
+</li> </ul>
+</div>
+<div class="ingredient-list-footer">
+<a href="#ingredients_top" class="u-overline">Back to top</a>
+</div>
+</div>
+<div class="ingredient-list" id="ingredient-list-f">
+<div class="ingredient-list-header">
+<span class="u-color-green u-h1">F</span>
+</div>
+<div class="ingredient-list-items">
+<ul class="u-list-nostyles">
+<li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/fava-beans-nutrition-selection-storage/">Fava Beans</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/feijoa-nutrition-selection-storage/">Feijoa</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/fennel/">Fennel</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/fiddlehead-ferns-nutrition-selection-storage/">Fiddlehead Ferns</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/fingerling-potatoes-nutrition-selection-storage/">Fingerling Potatoes</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/french-beans-nutrition-selection-storage/">French Beans</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/fresh-chanterelle-mushrooms-nutrition-selection-storage/">Fresh Chanterelle Mushrooms</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/fresh-figs/">Fresh Figs</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/frozen-fruit/">Frozen Fruit</a>
+</li> </ul>
+</div>
+<div class="ingredient-list-footer">
+<a href="#ingredients_top" class="u-overline">Back to top</a>
+</div>
+</div>
+<div class="ingredient-list" id="ingredient-list-g">
+<div class="ingredient-list-header">
+<span class="u-color-green u-h1">G</span>
+</div>
+<div class="ingredient-list-items">
+<ul class="u-list-nostyles">
+<li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/gai-lan-nutrition-selection-storage/">Gai Lan</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/galangal-root-nutrition-selection-storage/">Galangal Root</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/galia-melon-nutrition-selection-storage/">Galia Melon</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/garlic/">Garlic</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/ginger-root/">Ginger Root</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/golden-kiwifruit-nutrition-selection-storage/">Golden Kiwifruit</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/granny-smith-apple-nutrition-selection-storage/">Granny Smith Apple</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/grape-tomatoes-nutrition-selection-storage/">Grape Tomatoes</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/grapefruit/">Grapefruit</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/grapes/">Grapes</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/great-northern-beans/">Great Northern Beans</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/green-beans/">Green Beans</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/green-cabbage/">Green Cabbage</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/green-onions/">Green Onions</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/green-soybeans-edamame-nutrition-selection-storage/">Green Soybeans (Edamame)</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/green-tomato-nutrition-selection-storage/">Green Tomato</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/guava/">Guava</a>
+</li> </ul>
+</div>
+<div class="ingredient-list-footer">
+<a href="#ingredients_top" class="u-overline">Back to top</a>
+</div>
+</div>
+<div class="ingredient-list" id="ingredient-list-h">
+<div class="ingredient-list-header">
+<span class="u-color-green u-h1">H</span>
+</div>
+<div class="ingredient-list-items">
+<ul class="u-list-nostyles">
+<li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/hazelnuts-filberts/">Hazelnuts (Filberts)</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/hearts-of-palm-nutrition-selection-storage/">Hearts of Palm</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/honeycrisp-apples-nutrition-selection-storage/">Honeycrisp Apples</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/honeydew/">Honeydew Melon</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/horseradish-root-nutrition-selection-storage/">Horseradish Root</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/hubbard-squash/">Hubbard Squash</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/huckleberry-nutrition-selection-storage/">Huckleberry</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/hungarian-wax-peppers-nutrition-selection-storage/">Hungarian Wax Peppers</a>
+</li> </ul>
+</div>
+<div class="ingredient-list-footer">
+<a href="#ingredients_top" class="u-overline">Back to top</a>
+</div>
+</div>
+<div class="ingredient-list" id="ingredient-list-i">
+<div class="ingredient-list-header">
+<span class="u-color-green u-h1">I</span>
+</div>
+<div class="ingredient-list-items">
+<ul class="u-list-nostyles">
+<li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/iceburg-lettuce/">Iceberg Lettuce</a>
+</li> </ul>
+</div>
+<div class="ingredient-list-footer">
+<a href="#ingredients_top" class="u-overline">Back to top</a>
+</div>
+</div>
+<div class="ingredient-list" id="ingredient-list-j">
+<div class="ingredient-list-header">
+<span class="u-color-green u-h1">J</span>
+</div>
+<div class="ingredient-list-items">
+<ul class="u-list-nostyles">
+<li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/jackfruit-nutrition-selection-storage/">Jackfruit</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/jalapeno-peppers/">Jalapeno Peppers</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/jambolan-nutrition-selection-storage/">Jambolan</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/jerusalem-artichoke-nutrition-selection-storage/">Jerusalem Artichokes</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/jicama/">Jicama</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/jujube-nutrition-selection-storage/">Jujube</a>
+</li> </ul>
+</div>
+<div class="ingredient-list-footer">
+<a href="#ingredients_top" class="u-overline">Back to top</a>
+</div>
+</div>
+<div class="ingredient-list" id="ingredient-list-k">
+<div class="ingredient-list-header">
+<span class="u-color-green u-h1">K</span>
+</div>
+<div class="ingredient-list-items">
+<ul class="u-list-nostyles">
+<li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/kabocha-squash-nutrition-selection-storage/">Kabocha Squash</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/kaffir-limes-nutrition-selection-storage/">Kaffir Limes</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/kale/">Kale</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/key-limes-nutrition-selection-storage/">Key Limes</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/kiwanos-nutrition-selection-storage/">Kiwanos</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/kiwifruit/">Kiwifruit</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/kohlrabi/">Kohlrabi</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/kumquat/">Kumquat</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/kyoho-grapes-nutrition-selection-storage/">Kyoho Grapes</a>
+</li> </ul>
+</div>
+<div class="ingredient-list-footer">
+<a href="#ingredients_top" class="u-overline">Back to top</a>
+</div>
+</div>
+<div class="ingredient-list" id="ingredient-list-l">
+<div class="ingredient-list-header">
+<span class="u-color-green u-h1">L</span>
+</div>
+<div class="ingredient-list-items">
+<ul class="u-list-nostyles">
+<li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/lambs-quarters-nutrition-selection-storage/">Lamb&#8217;s-Quarters</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/leaf-lettuce/">Leaf Lettuce</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/leek/">Leek</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/lemon/">Lemon</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/lentils/">Lentils</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/lima-beans/">Lima Beans</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/lime/">Lime</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/loganberries-nutrition-selection-storage/">Loganberries</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/longan-nutrition-selection-storage/">Longan</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/loquat-nutrition-selection-storage/">Loquat</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/lychee/">Lychee</a>
+</li> </ul>
+</div>
+<div class="ingredient-list-footer">
+<a href="#ingredients_top" class="u-overline">Back to top</a>
+</div>
+</div>
+<div class="ingredient-list" id="ingredient-list-m">
+<div class="ingredient-list-header">
+<span class="u-color-green u-h1">M</span>
+</div>
+<div class="ingredient-list-items">
+<ul class="u-list-nostyles">
+<li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/macadamia/">Macadamia</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/mamey-sapote-nutrition-selection-storage/">Mamey Sapote</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/mandarin-orange-nutrition-selection-storage/">Mandarins</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/mango/">Mango</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/mangosteen-nutrition-selection-storage/">Mangosteen</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/manoa-lettuce-nutrition-selection-storage/">Manoa Lettuce</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/maradol-papaya-nutrition-selection-storage/">Maradol Papaya</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/mediterranean-medlar-nutrition-selection-storage/">Mediterranean Medlar</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/medjool-dates-nutrition-selection-storage/">Medjool Dates</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/mo-qua-nutrition-selection-storage/">Mo Qua</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/morel-mushrooms-nutrition-selection-storage/">Morel Mushrooms</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/mulberries-nutrition-selection-storage/">Mulberries</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/muscadine-grapes-nutrition-selection-storage/">Muscadine Grapes</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/mushrooms/">Mushrooms</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/mustard-greens-nutrition-selection-storage/">Mustard Greens</a>
+</li> </ul>
+</div>
+<div class="ingredient-list-footer">
+<a href="#ingredients_top" class="u-overline">Back to top</a>
+</div>
+</div>
+<div class="ingredient-list" id="ingredient-list-n">
+<div class="ingredient-list-header">
+<span class="u-color-green u-h1">N</span>
+</div>
+<div class="ingredient-list-items">
+<ul class="u-list-nostyles">
+<li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/navy-beans/">Navy Beans</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/nectarine/">Nectarine</a>
+</li> </ul>
+</div>
+<div class="ingredient-list-footer">
+<a href="#ingredients_top" class="u-overline">Back to top</a>
+</div>
+</div>
+<div class="ingredient-list" id="ingredient-list-o">
+<div class="ingredient-list-header">
+<span class="u-color-green u-h1">O</span>
+</div>
+<div class="ingredient-list-items">
+<ul class="u-list-nostyles">
+<li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/okra/">Okra</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/olives/">Olives</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/ong-choy-spinach-nutrition-selection-storage/">Ong Choy Spinach</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/onion/">Onion</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/opo-squash-nutrition-selection-storage/">Opo Squash</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/orange/">Orange</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/100-orange-juice/">Orange Juice (100%)</a>
+</li> </ul>
+</div>
+<div class="ingredient-list-footer">
+<a href="#ingredients_top" class="u-overline">Back to top</a>
+</div>
+</div>
+<div class="ingredient-list" id="ingredient-list-p">
+<div class="ingredient-list-header">
+<span class="u-color-green u-h1">P</span>
+</div>
+<div class="ingredient-list-items">
+<ul class="u-list-nostyles">
+<li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/papaya/">Papaya</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/parsnips/">Parsnips</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/passion-fruit/">Passion Fruit</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/peach/">Peach</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/peanuts/">Peanuts</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/pear/">Pear</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/pearl-onion-nutrition-selection-storage/">Pearl Onion</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/peas/">Peas</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/pecans/">Pecans</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/persian-melon-nutrition-selection-storage/">Persian Melon</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/persimmon/">Persimmon</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/pine-nuts/">Pine Nuts</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/pineapple/">Pineapple</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/pinto-beans/">Pinto Beans</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/pistachio/">Pistachio</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/plantain/">Plantain</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/plum/">Plum</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/pomegranate/">Pomegranate</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/portabella-mushroom/">Portabella Mushroom</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/potato/">Potato</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/plum-dried/">Prune</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/pummelo/">Pummelo</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/pumpkin/">Pumpkin</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/purple-asparagus-nutrition-selection-storage/">Purple Asparagus</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/purple-hull-peas-nutrition-selection-storage/">Purple Hull Peas</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/purple-potatoes-nutrition-selection-storage/">Purple Potatoes</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/purslane-nutrition-selection-storage/">Purslane</a>
+</li> </ul>
+</div>
+<div class="ingredient-list-footer">
+<a href="#ingredients_top" class="u-overline">Back to top</a>
+</div>
+</div>
+<div class="ingredient-list" id="ingredient-list-q">
+<div class="ingredient-list-header">
+<span class="u-color-green u-h1">Q</span>
+</div>
+<div class="ingredient-list-items">
+<ul class="u-list-nostyles">
+<li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/quince/">Quince</a>
+</li> </ul>
+</div>
+<div class="ingredient-list-footer">
+<a href="#ingredients_top" class="u-overline">Back to top</a>
+</div>
+</div>
+<div class="ingredient-list" id="ingredient-list-r">
+<div class="ingredient-list-header">
+<span class="u-color-green u-h1">R</span>
+</div>
+<div class="ingredient-list-items">
+<ul class="u-list-nostyles">
+<li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/radicchio/">Radicchio</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/radish/">Radish</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/rainier-cherries/">Rainier Cherries</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/raisins/">Raisins</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/raspberries/">Raspberries</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/red-banana-nutrition-selection-storage/">Red Banana</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/red-currants/">Red Currants</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/red-kidney-beans/">Red Kidney Beans</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/red-leaf-lettuce-nutrition-selection-storage/">Red Leaf Lettuce</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/red-potatoes-nutrition-selection-storage/">Red Potatoes</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/rhubarb/">Rhubarb</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/romaine-lettuce/">Romaine Lettuce</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/rose-apple-nutrition-selection-storage/">Rose Apple</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/rutabaga-nutrition-selection-storage/">Rutabaga</a>
+</li> </ul>
+</div>
+<div class="ingredient-list-footer">
+<a href="#ingredients_top" class="u-overline">Back to top</a>
+</div>
+</div>
+<div class="ingredient-list" id="ingredient-list-s">
+<div class="ingredient-list-header">
+<span class="u-color-green u-h1">S</span>
+</div>
+<div class="ingredient-list-items">
+<ul class="u-list-nostyles">
+<li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/salad-savoy-nutrition-selection-storage/">Salad Savoy Leafy Vegetable</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/salmonberry-nutrition-selection-storage/">Salmonberry</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/sapodilla-nutrition-selection-storage/">Sapodilla</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/sapote-nutrition-selection-storage/">Sapote</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/serrano-chili-nutrition-selection-storage/">Serrano Chili Peppers</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/seville-oranges-nutrition-selection-storage/">Seville Oranges</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/shallots-nutrition-selection-storage/">Shallots</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/sharon-fruit-nutrition-selection-storage/">Sharon Fruit</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/shiitake-mushrooms-nutrition-selection-storage/">Shiitake Mushrooms</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/snow-peas-nutrition-selection-storage/">Snow Peas</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/sorrel-nutrition-selection-storage/">Sorrel</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/soursop-nutrition-selection-storage/">Soursop</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/south-african-baby-pineapple-nutrition-selection-storage/">South African Baby Pineapple</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/spinach/">Spinach</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/star-fruit/">Star Fruit</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/strawberries/">Strawberries</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/strawberry-guava-nutrition-selection-storage/">Strawberry Guava</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/strawberry-papayas-nutrition-selection-storage/">Strawberry Papayas</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/sugar-apple-nutrition-selection-storage/">Sugar Apple</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/sugar-snap-peas-nutrition-selection-storage/">Sugar Snap Peas</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/summer-squash-nutrition-selection-storage/">Summer Squash</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/sunflower-kernels-nutrition-selection-storage/">Sunflower Kernels</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/surinam-cherries-nutrition-selection-storage/">Surinam Cherries</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/sweet-dumpling-squash-nutrition-selection-storage/">Sweet Dumpling Squash</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/sweet-potato/">Sweet Potato</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/swiss-chard/">Swiss Chard</a>
+</li> </ul>
+</div>
+<div class="ingredient-list-footer">
+<a href="#ingredients_top" class="u-overline">Back to top</a>
+</div>
+</div>
+<div class="ingredient-list" id="ingredient-list-t">
+<div class="ingredient-list-header">
+<span class="u-color-green u-h1">T</span>
+</div>
+<div class="ingredient-list-items">
+<ul class="u-list-nostyles">
+<li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/tangerine/">Tangerine</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/tarragon-nutrition-selection-storage/">Tarragon</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/thai-chiles-nutrition-selection-storage/">Thai Chiles</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/tomatillo/">Tomatillo</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/tomato/">Tomato</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/turnip/">Turnip</a>
+</li> </ul>
+</div>
+<div class="ingredient-list-footer">
+<a href="#ingredients_top" class="u-overline">Back to top</a>
+</div>
+</div>
+<div class="ingredient-list" id="ingredient-list-u">
+<div class="ingredient-list-header">
+<span class="u-color-green u-h1">U</span>
+</div>
+<div class="ingredient-list-items">
+<ul class="u-list-nostyles">
+<li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/ugli-fruit-nutrition-selection-storage/">Ugli Fruit</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/upland-cress-greens-nutrition-selection-storage/">Upland Cress Greens</a>
+</li> </ul>
+</div>
+<div class="ingredient-list-footer">
+<a href="#ingredients_top" class="u-overline">Back to top</a>
+</div>
+</div>
+<div class="ingredient-list" id="ingredient-list-v">
+<div class="ingredient-list-header">
+<span class="u-color-green u-h1">V</span>
+</div>
+<div class="ingredient-list-items">
+<ul class="u-list-nostyles">
+<li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/vidalia-onions-nutrition-selection-storage/">Vidalia Onions</a>
+</li> </ul>
+</div>
+<div class="ingredient-list-footer">
+<a href="#ingredients_top" class="u-overline">Back to top</a>
+</div>
+</div>
+<div class="ingredient-list" id="ingredient-list-w">
+<div class="ingredient-list-header">
+<span class="u-color-green u-h1">W</span>
+</div>
+<div class="ingredient-list-items">
+<ul class="u-list-nostyles">
+<li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/walnuts-english/">Walnuts</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/wasabi-root-nutrition-selection-storage/">Wasabi Root</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/water-coconut-nutrition-selection-storage/">Water Coconut</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/watercress/">Watercress</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/watermelon/">Watermelon</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/white-asparagus-nutrition-selection-storage/">White Asparagus</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/white-button-mushroom/">White Button Mushroom</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/wild-blueberries/">Wild Blueberries</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/winged-bean-nutrition-selection-storage/">Winged Bean</a>
+</li> </ul>
+</div>
+<div class="ingredient-list-footer">
+<a href="#ingredients_top" class="u-overline">Back to top</a>
+</div>
+</div>
+<div class="ingredient-list" id="ingredient-list-y">
+<div class="ingredient-list-header">
+<span class="u-color-green u-h1">Y</span>
+</div>
+<div class="ingredient-list-items">
+<ul class="u-list-nostyles">
+<li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/yam/">Yam</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/yukon-gold-potatoes-nutrition-selection-storage/">Yellow Potatoes</a>
+</li><li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/yuca-root-nutrition-selection-storage/">Yucca Root</a>
+</li> </ul>
+</div>
+<div class="ingredient-list-footer">
+<a href="#ingredients_top" class="u-overline">Back to top</a>
+</div>
+</div>
+<div class="ingredient-list" id="ingredient-list-z">
+<div class="ingredient-list-header">
+<span class="u-color-green u-h1">Z</span>
+</div>
+<div class="ingredient-list-items">
+<ul class="u-list-nostyles">
+<li>
+<a href="https://fruitsandveggies.org/fruits-and-veggies/summer-squash/">Zucchini</a>
+</li> </ul>
+</div>
+<div class="ingredient-list-footer">
+<a href="#ingredients_top" class="u-overline">Back to top</a>
+</div>
+</div> </div>
+</section>
+<footer class="">
+<div class="l-container-xlarge">
+<div class="l-footer-columns">
+<div class="l-footer-left-column">
+<div class="l-grid u-align-items-center">
+<div class="l-footer-logo l-grid-item-small-4 l-grid-item-medium-3 l-grid-item-desktop-12">
+<div class="footer-logo u-margin-bottom-base">
+<a href="/">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-labelledby="pbh_title" class="icon icon-pbh" viewBox="0 0 160 81.7" xml:space="preserve">
+<title id="pbh_title">Produce for Better Health Foundation</title>
+<g>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#64B246" d="M0,81.7h160V0H0V81.7z" />
+<g>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M23,25.2h-1.6v2.3H23c0.8,0,1.2-0.6,1.2-1.2
+  			C24.2,25.8,23.8,25.2,23,25.2 M23.1,30.1h-1.7v4.1h-2.8V22.6h4.6c2.6,0,3.9,1.8,3.9,3.7C27.1,28.2,25.7,30.1,23.1,30.1 M33.3,25.2
+  			h-1.6v2.3h1.6c0.8,0,1.2-0.6,1.2-1.2C34.5,25.8,34.1,25.2,33.3,25.2z M34.7,34.2l-2-4.3h-1v4.3h-2.8V22.6h4.6c2.6,0,4,1.8,4,3.7
+  			c0,1.6-1,2.6-1.9,3l2.5,4.8C38,34.2,34.7,34.2,34.7,34.2z M44.7,25.6c-0.2-0.3-0.6-0.5-1.1-0.5c-0.5,0-0.9,0.2-1.1,0.5
+  			c-0.3,0.3-0.4,0.7-0.4,2.8c0,2.1,0.2,2.5,0.4,2.8c0.2,0.3,0.6,0.5,1.1,0.5c0.5,0,0.9-0.2,1.1-0.5c0.3-0.3,0.4-0.7,0.4-2.8
+  			C45.1,26.3,44.9,25.9,44.7,25.6 M46.7,33c-0.8,0.8-1.8,1.3-3.2,1.3c-1.4,0-2.4-0.4-3.2-1.3c-1.2-1.2-1.2-2.7-1.2-4.6
+  			c0-1.9,0-3.4,1.2-4.6c0.8-0.8,1.8-1.3,3.2-1.3c1.4,0,2.4,0.4,3.2,1.3c1.2,1.2,1.2,2.7,1.2,4.6C47.9,30.4,47.9,31.8,46.7,33
+  			 M55.4,25.8c-0.3-0.4-0.7-0.6-1.4-0.6h-1.3v6.5H54c0.7,0,1.1-0.3,1.4-0.6c0.2-0.3,0.3-0.6,0.3-2.6C55.7,26.5,55.6,26.1,55.4,25.8
+  			 M58,32.2c-0.8,1.3-2,1.9-3.8,1.9H50V22.6h4.3c1.7,0,3,0.7,3.8,1.9c0.6,0.9,0.6,1.8,0.6,3.8S58.6,31.3,58,32.2 M64.8,34.3
+  			c-2.4,0-4.4-1.6-4.4-4.1v-7.5h2.8v7.4c0,1.1,0.6,1.7,1.5,1.7c0.9,0,1.6-0.6,1.6-1.7v-7.4h2.8v7.5C69.2,32.7,67.2,34.3,64.8,34.3
+  			 M75.5,34.3c-1.4,0-2.4-0.4-3.2-1.3c-1.2-1.2-1.2-2.7-1.2-4.6s0-3.4,1.2-4.6c0.8-0.8,1.8-1.3,3.2-1.3c2.2,0,4,1.2,4.4,3.8H77
+  			c-0.2-0.6-0.5-1.2-1.5-1.2c-0.5,0-0.9,0.2-1.1,0.5c-0.3,0.3-0.4,0.7-0.4,2.8c0,2.1,0.2,2.5,0.4,2.9c0.2,0.3,0.6,0.5,1.1,0.5
+  			c0.9,0,1.3-0.6,1.5-1.2h2.9C79.5,33.1,77.7,34.3,75.5,34.3 M81.6,34.2V22.6h7.9v2.5h-5v1.9h4.3v2.5h-4.3v2h5v2.5H81.6z M98.1,25.2
+  			v2h4.3v2.5h-4.3v4.5h-2.8V22.6h7.9v2.5H98.1z M110.2,25.6c-0.2-0.3-0.6-0.5-1.1-0.5c-0.5,0-0.9,0.2-1.1,0.5
+  			c-0.3,0.3-0.4,0.7-0.4,2.8c0,2.1,0.2,2.5,0.4,2.8c0.2,0.3,0.6,0.5,1.1,0.5c0.5,0,0.9-0.2,1.1-0.5c0.3-0.3,0.4-0.7,0.4-2.8
+  			C110.6,26.3,110.4,25.9,110.2,25.6 M112.2,33c-0.8,0.8-1.8,1.3-3.2,1.3c-1.4,0-2.4-0.4-3.2-1.3c-1.2-1.2-1.2-2.7-1.2-4.6
+  			c0-1.9,0-3.4,1.2-4.6c0.8-0.8,1.8-1.3,3.2-1.3c1.4,0,2.4,0.4,3.2,1.3c1.2,1.2,1.2,2.7,1.2,4.6C113.4,30.4,113.4,31.8,112.2,33
+  			 M119.9,25.2h-1.6v2.3h1.6c0.8,0,1.2-0.6,1.2-1.2C121.2,25.8,120.7,25.2,119.9,25.2z M121.3,34.2l-2-4.3h-1v4.3h-2.8V22.6h4.6
+  			c2.6,0,3.9,1.8,3.9,3.7c0,1.6-1,2.6-1.9,3l2.5,4.8C124.6,34.2,121.3,34.2,121.3,34.2z M23.3,47h-1.9v2h1.9c0.8,0,1-0.5,1-1
+  			S24.1,47,23.3,47 M23.2,42.6h-1.8v1.9h1.8c0.8,0,1-0.5,1-0.9C24.2,43.1,23.9,42.6,23.2,42.6 M23.6,51.6h-5V40.1h4.8
+  			c2.4,0,3.7,1.3,3.7,3.3c0,1.3-0.9,2-1.3,2.3c0.5,0.3,1.4,0.9,1.4,2.5C27.2,50.4,25.6,51.6,23.6,51.6 M29.2,51.6V40.1h7.9v2.5h-5
+  			v1.9h4.3v2.5H32v2h5v2.5H29.2z M44.3,42.6v9h-2.8v-9h-2.8v-2.5h8.5v2.5H44.3z M54.3,42.6v9h-2.8v-9h-2.8v-2.5h8.5v2.5H54.3z
+  			 M58.9,51.6V40.1h7.9v2.5h-5v1.9H66v2.5h-4.3v2h5v2.5H58.9z M73.3,42.6h-1.6V45h1.6c0.8,0,1.2-0.6,1.2-1.2
+  			C74.6,43.2,74.1,42.6,73.3,42.6L73.3,42.6z M74.7,51.6l-2-4.3h-1v4.3h-2.8V40.1h4.6c2.6,0,3.9,1.8,3.9,3.7c0,1.6-1,2.6-1.9,3
+  			l2.5,4.8H74.7L74.7,51.6z M89.1,51.6V47h-3v4.6h-2.8V40.1h2.8v4.4h3v-4.4h2.8v11.5H89.1z M94.3,51.6V40.1h7.9v2.5h-5v1.9h4.3v2.5
+  			h-4.3v2h5v2.5H94.3z M108.9,44.5l-1,3.1h2L108.9,44.5z M111.2,51.6l-0.5-1.7h-3.6l-0.6,1.7h-3l4.2-11.5h2.2l4.2,11.5H111.2z
+  			 M115.7,51.6V40.1h2.8v9h4.9v2.5H115.7z M129,42.6v9h-2.8v-9h-2.8v-2.5h8.5v2.5H129z M139.5,51.6V47h-3v4.6h-2.8V40.1h2.8v4.4h3
+  			v-4.4h2.8v11.5H139.5z M19.4,59.3v2.9h3.5V63h-3.5v3.5h-0.9v-8h5v0.8H19.4z M31.8,59.8c-0.4-0.4-0.8-0.6-1.4-0.6s-1,0.2-1.4,0.6
+  			c-0.5,0.5-0.6,1.1-0.6,2.7c0,1.6,0.1,2.2,0.6,2.7c0.4,0.4,0.8,0.6,1.4,0.6s1-0.2,1.4-0.6c0.5-0.5,0.6-1.1,0.6-2.7
+  			C32.4,60.9,32.3,60.4,31.8,59.8 M32.4,65.8c-0.5,0.5-1.2,0.8-2,0.8c-0.8,0-1.5-0.3-2-0.8c-0.8-0.8-0.8-1.4-0.8-3.3
+  			c0-1.8,0-2.5,0.8-3.3c0.5-0.5,1.2-0.8,2-0.8c0.8,0,1.5,0.3,2,0.8c0.8,0.8,0.8,1.4,0.8,3.3C33.3,64.4,33.2,65.1,32.4,65.8
+  			 M40.9,66.6c-1.6,0-2.8-1.1-2.8-2.7v-5.3h0.9v5.3c0,1.2,0.8,2,1.9,2c1.2,0,1.9-0.8,1.9-2v-5.3h0.9v5.3
+  			C43.7,65.5,42.5,66.6,40.9,66.6 M53.9,66.6l-4.3-6.4v6.4h-0.9v-8h0.8l4.3,6.4v-6.4h0.9v8H53.9z M64,59.9c-0.4-0.4-1-0.6-1.6-0.6
+  			h-1.7v6.5h1.7c0.6,0,1.2-0.1,1.6-0.6c0.5-0.6,0.5-1.5,0.5-2.6S64.5,60.5,64,59.9 M64.7,65.7c-0.5,0.6-1.2,0.8-2.1,0.8h-2.7v-8h2.7
+  			c0.9,0,1.6,0.3,2.1,0.8c0.7,0.8,0.7,1.9,0.7,3.1C65.4,63.8,65.4,65,64.7,65.7 M72.7,59.8L71.1,64h3L72.7,59.8L72.7,59.8z M75,66.6
+  			l-0.6-1.8h-3.5l-0.6,1.8h-0.9l2.9-8H73l2.9,8H75L75,66.6z M82,59.3v7.2h-0.9v-7.2h-2.3v-0.8h5.5v0.8H82z M88.9,66.6h0.9v-8h-0.9
+  			V66.6z M98.9,59.8c-0.4-0.4-0.8-0.6-1.4-0.6s-1,0.2-1.4,0.6c-0.5,0.5-0.6,1.1-0.6,2.7c0,1.6,0.1,2.2,0.6,2.7
+  			c0.4,0.4,0.8,0.6,1.4,0.6s1-0.2,1.4-0.6c0.5-0.5,0.6-1.1,0.6-2.7C99.4,60.9,99.4,60.4,98.9,59.8 M99.5,65.8
+  			c-0.5,0.5-1.2,0.8-2,0.8s-1.5-0.3-2-0.8c-0.8-0.8-0.8-1.4-0.8-3.3c0-1.8,0-2.5,0.8-3.3c0.5-0.5,1.2-0.8,2-0.8s1.5,0.3,2,0.8
+  			c0.8,0.8,0.8,1.4,0.8,3.3C100.3,64.4,100.2,65.1,99.5,65.8 M110.3,66.6l-4.3-6.4v6.4h-0.9v-8h0.8l4.3,6.4v-6.4h0.9v8H110.3z" />
+</g>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M129.1,27c0.4,0,0.6-0.3,0.6-0.6c0-0.4-0.2-0.6-0.6-0.6h-0.7V27
+  		H129.1z M127.9,25.3h1.3c0.7,0,1.1,0.5,1.1,1.1c0,0.5-0.3,0.9-0.7,1l0.7,1.1h-0.6l-0.6-1h-0.6v1h-0.5L127.9,25.3L127.9,25.3z
+  		 M131.4,26.9c0-1.4-0.9-2.5-2.4-2.5c-1.5,0-2.4,1.1-2.4,2.5c0,1.4,0.9,2.5,2.4,2.5C130.5,29.4,131.4,28.3,131.4,26.9z M126,26.9
+  		c0-1.7,1.1-3,3-3c1.9,0,3,1.3,3,3c0,1.7-1.1,3-3,3C127.1,29.9,126,28.6,126,26.9z" />
+</g>
+</svg>
+ </a>
+</div>
+</div>
+<div class="l-footer-mission l-grid-item-small-8 l-grid-item-medium-6 l-grid-item-desktop-12">
+<div class="u-paragraph-small">
+<p>Committed to helping people enjoy happier, healthier<br />
+lives by eating more fruits and vegetables every day.</p>
+</div>
+</div>
+<div class="l-grid-item-small-12">
+<div class="l-footer-nav-button">
+<a href="https://www.classy.org/give/189202/#!/donation/checkout" class="button button-secondary-hollow-border" target="_blank">Donate</a>
+<a href="/newsletter" class="button button-secondary" target="_blank">Get The Newsletter</a>
+</div>
+</div>
+</div>
+</div>
+<nav class="l-footer-nav">
+<div>
+<ul class="menu" role="menu"><li id="menu-item-60597" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60597"><a href="https://fruitsandveggies.org/about/">About</a></li>
+<li id="menu-item-60598" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60598"><a href="https://fruitsandveggies.org/join-the-movement/">Have A Plant®</a></li>
+<li id="menu-item-60599" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60599"><a href="https://fruitsandveggies.org/haveaplantambassadors/">Have A Plant® Ambassadors</a></li>
+<li id="menu-item-60600" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-60600"><a href="https://fruitsandveggies.org/stories/nfvm/">NFVM</a></li>
+</ul><ul class="menu" role="menu"><li id="menu-item-60738" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-60738"><a href="https://fruitsandveggies.org/expert-professionals/research/">Research &#038; Consumer Insights</a></li>
+<li id="menu-item-60602" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60602"><a href="https://fruitsandveggies.org/expert-professionals/educational-resources/">Educational Resources</a></li>
+<li id="menu-item-60603" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60603"><a href="https://fruitsandveggies.org/fruit-and-vegetable-consumption-coalition/">Fruit &#038; Vegetable <br>Consumption Coalition</a></li>
+</ul><ul class="menu" role="menu"><li id="menu-item-60604" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60604"><a href="https://fruitsandveggies.org/membership/">Partnership</a></li>
+<li id="menu-item-60605" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60605"><a href="https://fruitsandveggies.org/lead-the-change/">Lead The Change</a></li>
+<li id="menu-item-60606" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60606"><a href="https://fruitsandveggies.org/membership/annual-reports/">Annual Reports</a></li>
+<li id="menu-item-60607" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-60607"><a href="https://fruitsandveggies.org/about/news/">Press Room</a></li>
+</ul> </div>
+</nav>
+</div>
+</div>
+<div class="l-container-xlarge u-padding-vertical-xsmall u-padding-vertical-large-640">
+<div class="l-footer-copyright-social">
+<div>
+<small class="u-font-din">
+&copy; 2022 Produce for Better Health Foundation. All rights reserved. &nbsp; &nbsp;
+<a href="https://fruitsandveggies.org/terms-conditions/">Terms & Conditions</a> &nbsp; &nbsp;
+<a href="https://fruitsandveggies.org/privacy-policy/">Privacy Policy</a>
+</small>
+</div>
+<div>
+<a href="https://www.facebook.com/FruitsandVeggies/" class="u-padding-right-large">
+<span class="u-color-grey-fill"> <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="facebook_title" class="icon icon-facebook" viewBox="0 0 7 14">
+<title id="facebook_title">Facebook</title>
+<path fill-rule="evenodd" d="M1.75 4.667H0V7h1.75v7h2.917V7H6.79L7 4.667H4.667v-.974c0-.584.11-.776.653-.776H7V0H4.777C2.683 0 1.75.922 1.75 2.695v1.972z" />
+</svg>
+</span>
+</a>
+<a href="https://twitter.com/fruits_veggies" class="u-padding-right-large">
+<span class="u-color-grey-fill"><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="twitter_title" class="icon icon-twitter" viewBox="0 0 14 13">
+<title id="twitter_title">Twitter</title>
+<path fill-rule="evenodd" d="M14 1.538c-.527.28-1.053.419-1.668.512.615-.42 1.054-1.025 1.273-1.817a5.441 5.441 0 0 1-1.843.792C11.279.42 10.489 0 9.699 0 8.12 0 6.846 1.444 6.846 3.262c0 .233.044.512.088.745C4.52 3.914 2.37 2.563.966.606.702 1.072.57 1.63.57 2.236c0 1.119.526 2.144 1.272 2.75-.482 0-.921-.14-1.316-.42v.047c0 1.584 1.01 2.889 2.282 3.215-.176.093-.44.093-.702.093-.176 0-.352 0-.527-.046.351 1.304 1.404 2.236 2.677 2.283a5.285 5.285 0 0 1-3.555 1.398c-.22 0-.483 0-.702-.047C1.273 12.441 2.765 13 4.389 13c5.266 0 8.163-4.986 8.163-9.319v-.42c.57-.465 1.053-1.071 1.448-1.723z" />
+</svg>
+</span>
+</a>
+<a href="https://www.instagram.com/fruitsandveggies/" class="u-padding-right-large">
+<span class="u-color-grey-fill"><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="instagram_title" class="icon icon-instagram" viewBox="0 0 79.4 79.4">
+<title id="instagram_title">Instagram</title>
+<path d="M17.9,0C8,0,0,8,0,17.9v43.5c0,9.9,8,17.9,17.9,17.9h43.5c9.9,0,17.9-8,17.9-17.9V17.9C79.3,8,71.3,0,61.4,0H17.9z
+	 M39.7,59.1c-10.7,0-19.4-8.7-19.4-19.4s8.7-19.4,19.4-19.4s19.4,8.7,19.4,19.4c0,0,0,0,0,0C59.1,50.4,50.4,59.1,39.7,59.1z
+	 M63.9,21.3c-3,0-5.5-2.5-5.5-5.5s2.5-5.5,5.5-5.5c3,0,5.5,2.5,5.5,5.5c0,0,0,0,0,0C69.4,18.9,67,21.3,63.9,21.3
+	C63.9,21.3,63.9,21.3,63.9,21.3z" />
+</svg>
+</span>
+</a>
+<a href="https://www.linkedin.com/company/p-b-h-foundation/" class="u-padding-right-large">
+<span class="u-color-grey-fill"><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="linkedin_title" class="icon icon-linkedin-small" viewBox="0 0 24 24">
+<title id="linkedin_title">LinkedIn</title>
+<path fill-rule="evenodd" d="M22.286 0H1.709C.766 0 0 .777 0 1.73v20.54C0 23.223.766 24 1.709 24h20.577c.943 0 1.714-.777 1.714-1.73V1.73C24 .777 23.229 0 22.286 0zM7.254 20.571H3.696V9.118H7.26V20.57h-.005zM5.475 7.554a2.063 2.063 0 0 1 0-4.125c1.136 0 2.063.926 2.063 2.062a2.06 2.06 0 0 1-2.063 2.063zM20.587 20.57H17.03V15c0-1.329-.026-3.037-1.848-3.037-1.853 0-2.137 1.446-2.137 2.94v5.668H9.488V9.118H12.9v1.564h.048c.477-.9 1.64-1.848 3.37-1.848 3.6 0 4.27 2.373 4.27 5.459v6.278z" />
+</svg>
+</span>
+</a>
+<a href="https://www.pinterest.com/fvmorematters/">
+<span class="u-color-grey-fill"><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="pinterest_title" class="icon icon-pinterest" viewBox="0 0 12 14">
+<title id="pinterest_title">Pinterest</title>
+<path fill-rule="evenodd" d="M2.578 13.776c-.076-1.13-.065-1.976.033-2.535.172-.69 1.103-4.391 1.103-4.391a3.025 3.025 0 0 1-.282-1.31c0-1.23.759-2.144 1.7-2.144.34-.005.667.129.894.367.228.238.335.557.294.875 0 .758-.516 1.893-.778 2.943-.107.395-.008.814.267 1.13.275.314.693.488 1.127.467 1.67 0 2.954-1.655 2.954-4.037 0-2.118-1.618-3.589-3.928-3.589a4.222 4.222 0 0 0-2.994 1.065 3.718 3.718 0 0 0-1.25 2.77 3.3 3.3 0 0 0 .702 2.014.253.253 0 0 1 .067.252c-.072.278-.23.897-.263 1-.033.103-.138.197-.315.117C.735 8.254 0 6.643 0 5.347 0 2.561 2.153 0 6.205 0 9.465 0 12 2.185 12 5.105 12 8.15 9.957 10.6 7.122 10.6c-.855.028-1.665-.354-2.153-1.014l-.587 2.1C4.194 12.228 3.805 13 3.212 14l-.634-.224z" />
+</svg>
+</span>
+ </a>
+</div>
+</div>
+</div>
+</footer>
+</main>
+<script type='text/javascript' src='https://fruitsandveggies.org/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://fruitsandveggies.org/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://fruitsandveggies.org/wp-includes/js/jquery/ui/core.min.js?ver=1.12.1' id='jquery-ui-core-js'></script>
+<script type='text/javascript' src='https://fruitsandveggies.org/wp-includes/js/jquery/ui/menu.min.js?ver=1.12.1' id='jquery-ui-menu-js'></script>
+<script type='text/javascript' src='https://fruitsandveggies.org/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.7' id='regenerator-runtime-js'></script>
+<script type='text/javascript' src='https://fruitsandveggies.org/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' src='https://fruitsandveggies.org/wp-includes/js/dist/dom-ready.min.js?ver=71883072590656bf22c74c7b887df3dd' id='wp-dom-ready-js'></script>
+<script type='text/javascript' src='https://fruitsandveggies.org/wp-includes/js/dist/hooks.min.js?ver=a7edae857aab69d69fa10d5aef23a5de' id='wp-hooks-js'></script>
+<script type='text/javascript' src='https://fruitsandveggies.org/wp-includes/js/dist/i18n.min.js?ver=5f1269854226b4dd90450db411a12b79' id='wp-i18n-js'></script>
+<script type='text/javascript' id='wp-i18n-js-after'>
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type='text/javascript' id='wp-a11y-js-translations'>
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", { "locale_data": { "messages": { "": {} } } } );
+</script>
+<script type='text/javascript' src='https://fruitsandveggies.org/wp-includes/js/dist/a11y.min.js?ver=0ac8327cc1c40dcfdf29716affd7ac63' id='wp-a11y-js'></script>
+<script type='text/javascript' id='jquery-ui-autocomplete-js-extra'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://fruitsandveggies.org/wp-includes/js/jquery/ui/autocomplete.min.js?ver=1.12.1' id='jquery-ui-autocomplete-js'></script>
+<script type='text/javascript' id='_ning_global-js-extra'>
+/* <![CDATA[ */
+var _adn_ = {"ajaxurl":"https:\/\/fruitsandveggies.org\/wp-admin\/admin-ajax.php","upload":{"dir":"\/code\/wp-content\/uploads\/angwp\/","src":"https:\/\/fruitsandveggies.org\/wp-content\/uploads\/angwp\/"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://fruitsandveggies.org/wp-content/plugins/angwp/assets/dist/angwp.bundle.js?ver=1.6.2' id='_ning_global-js'></script>
+<script type='text/javascript' src='https://fruitsandveggies.org/wp-content/plugins/angwp/include/extensions/spr_columns/assets/js/spr_inViewport.js?ver=1.6.2' id='spr_inViewport_js-js'></script>
+<script type='text/javascript' src='https://fruitsandveggies.org/wp-content/plugins/angwp/include/extensions/spr_columns/assets/js/parallax.min.js?ver=1.6.2' id='spr_parallax_js-js'></script>
+<script type='text/javascript' src='https://fruitsandveggies.org/wp-content/themes/pbh/public/js/app.js?ver=1641558705' id='app-js'></script>
+<script type='text/javascript' id='strack_js-js-extra'>
+/* <![CDATA[ */
+var sTrackStatsArgs = {"ajaxurl":"https:\/\/fruitsandveggies.org\/wp-admin\/admin-ajax.php","is_admin":"","id":"18877793","track_id":"4250272","content_id":"0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://fruitsandveggies.org/wp-content/plugins/smartrack/public/assets/js/sTrackStats.js?ver=5.8.1' id='strack_js-js'></script>
+<script type='text/javascript' src='https://fruitsandveggies.org/wp-includes/js/wp-embed.min.js?ver=5.8.1' id='wp-embed-js'></script>
+
+
+<script type="text/javascript">var ang_tracker = "UA-138074580-1";var loaded_ang = [];var loaded_angzones = [];</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"8b2d3f96a7","applicationID":"303697815","transactionName":"NAABMBFWCxZUAUBdVw1KIgcXXgoLGgNGV1AKEwZJClkCF1AGXVFWFw==","queueTime":0,"applicationTime":1193,"atts":"GEcCRllMGBg=","errorBeacon":"bam.nr-data.net","agent":""}</script><script type="text/javascript">(function(){window['__CF$cv$params']={r:'6d235f69d8a05c4c',m:'.681znOovXq5p2CbrXI0lv716xzZXUhjWQb7NpvL.YQ-1642965556-0-AfIq2uYhyVoyqElOA76Kp7bwL0pXKm197Rj3bXpocNmTAfcp+Uo915L1YFKUYx+o4C5vLh76tZ2dLp2ejG1w5WQTnknb4HkDfUwZpVvlK6gaq0e2uAsE6Ax7ffQ/KNQWyvMqydHa1HbD+SFNDH1eOk0=',s:[0x63d0cf1c79,0x2af7473cfc],}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"6d235f69d8a05c4c","token":"9f38f2cf8cc647d78212ced5c5e1dcdf","version":"2021.12.0","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>
