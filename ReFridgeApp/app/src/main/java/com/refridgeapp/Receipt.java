@@ -53,7 +53,7 @@ public class Receipt {
         List<Text.TextBlock> selectedBlocks = blockList.subList(from,to);
         List<Text.Line> selectedLines = blocksToLines(selectedBlocks);
         selectedLines = linesRegexProcess(selectedLines, "\\d{3}");
-        selectedLines = linesRegexProcess(selectedLines, "round|donation|cashier|price|customer|vic|your|store|harris|teeter|food|pay|matthews");
+        selectedLines = linesRegexProcess(selectedLines, "round|donation|cashier|price|customer|vic|your|store|harris|teeter|food|pay|matthews|student|disc");
         selectedLines = linesRegexProcess(selectedLines, "[0-9]+.\\d{2}");
         itemList = processAndExportLines(selectedLines);
         return itemList;
@@ -74,6 +74,7 @@ public class Receipt {
             }
             indexes.add(index);
             index++;
+
         }
         return getByIndices(lines, indexes);
     }
@@ -98,6 +99,7 @@ public class Receipt {
 
             index++;
         }
+
         List<Text.Line> processedLines = getByIndices(lines,indexes);
         return exportLines(processedLines);
     }
