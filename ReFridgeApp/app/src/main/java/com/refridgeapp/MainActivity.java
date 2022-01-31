@@ -11,8 +11,13 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
+
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,12 +28,22 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
+import android.view.View;
+
 public class MainActivity extends AppCompatActivity implements GroceryListAdapter.OnGroceryItemListener, BottomNavigationView.OnNavigationItemSelectedListener {
     private ArrayList<GroceryItem> groceryItems;
     private RecyclerView recyclerView;
+    private static final String[] CAMERA_PERMISSION = new String[]{Manifest.permission.CAMERA};
+    private static final int CAMERA_REQUEST_CODE = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -63,10 +78,41 @@ public class MainActivity extends AppCompatActivity implements GroceryListAdapte
 
         recyclerView.setAdapter(new GroceryListAdapter(groceryItems, this));
     }
+    // requests camera permissions
+    private void requestPermission() {
+        ActivityCompat.requestPermissions(
+                this,
+                CAMERA_PERMISSION,
+                CAMERA_REQUEST_CODE
+        );
+    }
+
+    // takes the user to the viewfinder
+    private void enableCamera() {
+        Intent intent = new Intent(this, CameraActivity.class);
+        startActivity(intent);
+    }
+
+    // check if the user has given us camera permissions
+    private boolean hasCameraPermission() {
+        return ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.CAMERA
+        ) == PackageManager.PERMISSION_GRANTED;
+    }
 
     public void addGrocery(View view) {
         Intent intent = new Intent(this, AddGroceryActivity.class);
         startActivity(intent);
+    }
+
+    // check if we have permissions, then opens the viewfinder
+    public void openViewfinder(View view) {
+        if (hasCameraPermission()) {
+            enableCamera();
+        } else {
+            requestPermission();
+        }
     }
 
     @Override
@@ -85,7 +131,10 @@ public class MainActivity extends AppCompatActivity implements GroceryListAdapte
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
+        return true;
+        // there's some sort of bug here, i ended up removing the menu attribute from the "BottomNavigationView in the activity_main xml
+        // and commenting out this switch statement just to get this bug-free
+        /*
         switch (item.getItemId()) {
             case R.id.recipes:
                 Intent intent1 = new Intent(MainActivity.this, RecipesActivity.class);
@@ -103,8 +152,9 @@ public class MainActivity extends AppCompatActivity implements GroceryListAdapte
                 //getSupportFragmentManager().beginTransaction().replace(R.id.container, thirdFragment).commit();
                 return true;
         }
-        return false;
+        return false; */
     }
+
 
     public static class Notifications extends AppCompatActivity {
 
@@ -152,5 +202,5 @@ public class MainActivity extends AppCompatActivity implements GroceryListAdapte
 
             NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
     }
-    }
+
 }
