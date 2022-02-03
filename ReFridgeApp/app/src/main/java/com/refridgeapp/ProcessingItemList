@@ -1,0 +1,19 @@
+import java.util.ArrayList;
+
+public class ProcessingItemList{
+
+    public static void processList(ArrayList<String> inputList){
+        for(int i = inputList.size() - 1; i >= 0; i--){
+            String item = inputList.get(i);
+            item = item.toLowerCase();
+            item = item.replaceAll("[^a-z]", "");
+            item = item.trim();
+            inputList.set(i, item);
+        }
+        for(int i = inputList.size() - 1; i >= 0; i--){
+            if(inputList.subList(0, i).contains(inputList.get(i)) || inputList.get(i) == ""){
+                inputList.remove(i);
+            }
+        }
+    }
+}
