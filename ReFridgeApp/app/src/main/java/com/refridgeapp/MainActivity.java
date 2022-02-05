@@ -30,10 +30,7 @@ import java.util.Date;
 
 
 import android.Manifest;
-import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.os.Bundle;
-import android.view.View;
 
 public class MainActivity extends AppCompatActivity implements GroceryListAdapter.OnGroceryItemListener, BottomNavigationView.OnNavigationItemSelectedListener {
     private ArrayList<GroceryItem> groceryItems;
@@ -78,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements GroceryListAdapte
 
         recyclerView.setAdapter(new GroceryListAdapter(groceryItems, this));
     }
+
     // requests camera permissions
     private void requestPermission() {
         ActivityCompat.requestPermissions(
@@ -131,10 +129,10 @@ public class MainActivity extends AppCompatActivity implements GroceryListAdapte
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return true;
+        //return true;
         // there's some sort of bug here, i ended up removing the menu attribute from the "BottomNavigationView in the activity_main xml
         // and commenting out this switch statement just to get this bug-free
-        /*
+
         switch (item.getItemId()) {
             case R.id.recipes:
                 Intent intent1 = new Intent(MainActivity.this, RecipesActivity.class);
@@ -152,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements GroceryListAdapte
                 //getSupportFragmentManager().beginTransaction().replace(R.id.container, thirdFragment).commit();
                 return true;
         }
-        return false; */
+        return false;
     }
 
 
@@ -165,12 +163,12 @@ public class MainActivity extends AppCompatActivity implements GroceryListAdapte
             setContentView(R.layout.activity_main);
             addNotification();
 
-            }
+        }
 
-        private void addNotification(){
+        private void addNotification() {
 
-        String textTitle = "Refridge Item Expiration";
-        String textContent = "Your grocery" + "will expire in" + " ";
+            String textTitle = "Refridge Item Expiration";
+            String textContent = "Your grocery" + "will expire in" + " ";
 
             Intent notificationIntent = new Intent(this, MainActivity.class);
             notificationIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -179,14 +177,14 @@ public class MainActivity extends AppCompatActivity implements GroceryListAdapte
 
             PendingIntent Intent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this,"My notification");
-                builder.setSmallIcon(R.drawable.ic_launcher_recipes);
-                builder.setContentTitle(textTitle);
-                builder.setContentText(textContent);
-                builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
-                // Set the intent that will fire when the user taps the notification
-                builder.setContentIntent(Intent);
-                builder.setAutoCancel(true);
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "My notification");
+            builder.setSmallIcon(R.drawable.ic_launcher_recipes);
+            builder.setContentTitle(textTitle);
+            builder.setContentText(textContent);
+            builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
+            // Set the intent that will fire when the user taps the notification
+            builder.setContentIntent(Intent);
+            builder.setAutoCancel(true);
 
             builder.setContentIntent(Intent);
 
@@ -201,6 +199,7 @@ public class MainActivity extends AppCompatActivity implements GroceryListAdapte
             }
 
             NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
-    }
+        }
 
+    }
 }

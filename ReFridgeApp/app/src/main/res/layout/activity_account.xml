@@ -17,6 +17,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="410dp"
+        android:layout_height="55dp"
+        android:layout_gravity="bottom"
+        android:backgroundTint="@color/colorPrimary"
+        app:fabCradleMargin="8dp"
+        app:fabCradleRoundedCornerRadius="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottonnav" />
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
@@ -35,20 +48,7 @@
             app:fabCradleRoundedCornerRadius="10dp"
             app:fabCradleVerticalOffset="10dp">
 
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/bottomNavigationView"
-                android:layout_width="410dp"
-                android:layout_height="55dp"
-                android:layout_gravity="bottom"
-                android:layout_marginLeft="0dp"
-                android:layout_marginRight="0dp"
-                android:backgroundTint="@color/colorPrimary"
-                app:fabCradleMargin="8dp"
-                app:fabCradleRoundedCornerRadius="32dp"
-                app:layout_constraintBottom_toBottomOf="@+id/groceryItemListView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:menu="@menu/bottonnav" />
+
         </com.google.android.material.bottomappbar.BottomAppBar>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

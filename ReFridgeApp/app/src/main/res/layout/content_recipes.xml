@@ -11,6 +11,7 @@
         android:id="@+id/Generate_recipes_button"
         android:layout_width="243dp"
         android:layout_height="54dp"
+        android:theme="@style/Button.White"
         android:text="Generate Recipes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,12 +52,24 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="80dp"
-        android:text="List of Recipes:\n 1. Potatoes au Gratin\n 2. Ham Sandwich\n 3. Smoothie\n 4. Broccolli Salad"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Generate_recipes_button" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="410dp"
+        android:layout_height="55dp"
+        android:layout_gravity="bottom"
+        android:backgroundTint="@color/colorPrimary"
+        app:fabCradleMargin="8dp"
+        app:fabCradleRoundedCornerRadius="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottonnav" />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/container"
@@ -76,21 +89,6 @@
             app:fabCradleMargin="10dp"
             app:fabCradleRoundedCornerRadius="10dp"
             app:fabCradleVerticalOffset="10dp">
-
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/bottomNavigationView"
-                android:layout_width="410dp"
-                android:layout_height="55dp"
-                android:layout_gravity="bottom"
-                android:layout_marginLeft="0dp"
-                android:layout_marginRight="0dp"
-                android:backgroundTint="@color/colorPrimary"
-                app:fabCradleMargin="8dp"
-                app:fabCradleRoundedCornerRadius="32dp"
-                app:layout_constraintBottom_toBottomOf="@+id/groceryItemListView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:menu="@menu/bottonnav" />
         </com.google.android.material.bottomappbar.BottomAppBar>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
