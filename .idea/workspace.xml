@@ -22,10 +22,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efb6dd48-7a8e-43c7-9ace-df69b09875e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ReFridgeApp/app/src/main/java/com/refridgeapp/HarrisTeeterReceipt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ReFridgeApp/app/src/main/java/com/refridgeapp/TargetReceipt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ReFridgeApp/app/src/main/java/com/refridgeapp/WalmartReceipt.java" afterDir="false" />
+    <list default="true" id="efb6dd48-7a8e-43c7-9ace-df69b09875e9" name="Default Changelist" comment="Creating classes to filter Walmart, Target, and Harris Teeter receipts">
+      <change afterPath="$PROJECT_DIR$/ReFridgeApp/app/src/main/java/com/refridgeapp/ProcessingItemList" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,6 +54,14 @@
       <option name="presentableId" value="Default" />
       <updated>1642654755059</updated>
     </task>
+    <task id="LOCAL-00001" summary="Creating classes to filter Walmart, Target, and Harris Teeter receipts">
+      <created>1642967988383</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1642967988383</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -68,11 +74,24 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Creating classes to filter Walmart, Target, and Harris Teeter receipts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating classes to filter Walmart, Target, and Harris Teeter receipts" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="500" y="274" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1642967578252">
+    <state x="418" y="162" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1643856317558">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state x="500" y="274" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.720@0.0.1366.720" timestamp="1642967578252" />
+    <state x="418" y="162" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.720@0.0.1366.720" timestamp="1643856317558" />
+    <state x="275" y="93" key="Vcs.Push.Dialog.v2" timestamp="1642968069234">
+      <screen x="0" y="0" width="1366" height="720" />
+    </state>
+    <state x="275" y="93" key="Vcs.Push.Dialog.v2/0.0.1366.720@0.0.1366.720" timestamp="1642968069234" />
+    <state x="500" y="274" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1643856235791">
+      <screen x="0" y="0" width="1366" height="720" />
+    </state>
+    <state x="500" y="274" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.720@0.0.1366.720" timestamp="1643856235791" />
   </component>
 </project>
