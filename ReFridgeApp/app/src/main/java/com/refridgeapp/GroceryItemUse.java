@@ -6,6 +6,7 @@ import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @Entity(tableName = "grocery_item_use_table")
 public class GroceryItemUse implements Serializable {
@@ -49,5 +50,20 @@ public class GroceryItemUse implements Serializable {
 
     public void setUsed(boolean used) {
         this.used = used;
+    }
+
+    public int getSustainabilityScore(AppDatabase db) {
+        GroceryItemUseDao useDao = db.groceryItemUseDao();
+        List<GroceryItemUse> uses = useDao.getAll();
+
+        int score = 50;
+        for (GroceryItemUse use: uses) {
+            if (use.isUsed())
+                score++;
+            else
+                score--;
+        }
+
+        return Math.min(100, Math.max(score, 0));
     }
 }
