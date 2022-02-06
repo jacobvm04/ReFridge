@@ -52,7 +52,7 @@ public class GroceryItemUse implements Serializable {
         this.used = used;
     }
 
-    public int getSustainabilityScore(AppDatabase db) {
+    public static int getSustainabilityScore(AppDatabase db) {
         GroceryItemUseDao useDao = db.groceryItemUseDao();
         List<GroceryItemUse> uses = useDao.getAll();
 
