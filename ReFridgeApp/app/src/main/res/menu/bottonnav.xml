@@ -9,6 +9,12 @@
         android:id="@+id/fridge"
         android:title="Fridge"
         android:icon="@drawable/ic_fridge_foreground"/>
+
+    <item
+        android:id="@+id/sustainability"
+        android:title="Sustainability"
+        android:icon="@android:drawable/ic_dialog_info" />
+
     <item
         android:id="@+id/account"
         android:title="Account"

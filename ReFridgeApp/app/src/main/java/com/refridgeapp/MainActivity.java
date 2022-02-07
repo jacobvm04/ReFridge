@@ -18,6 +18,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -32,7 +33,7 @@ import java.util.Date;
 import android.Manifest;
 import android.content.pm.PackageManager;
 
-public class MainActivity extends AppCompatActivity implements GroceryListAdapter.OnGroceryItemListener, BottomNavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements GroceryListAdapter.OnGroceryItemListener, BottomNavigationView.OnNavigationItemSelectedListener, ItemUseFragment.itemUseDialogListener {
     private ArrayList<GroceryItem> groceryItems;
     private RecyclerView recyclerView;
     private static final String[] CAMERA_PERMISSION = new String[]{Manifest.permission.CAMERA};
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements GroceryListAdapte
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
-        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setSelectedItemId(R.id.fridge);
 
         // Mock data for now
         if (groceryItems == null || groceryItems.isEmpty()) {
@@ -115,9 +116,18 @@ public class MainActivity extends AppCompatActivity implements GroceryListAdapte
 
     @Override
     public void onGroceryItemClick(int position) {
+        DialogFragment useDialog = new ItemUseFragment();
+
+        Bundle args = new Bundle();
+        args.putSerializable("groceryItem", groceryItems.get(position));
+        useDialog.setArguments(args);
+
+        useDialog.show(getSupportFragmentManager(), "itemUse");
+    }
+
+    public void onDialogClick(DialogFragment dialog) {
         AppDatabase db = AppDatabase.getInstance(getApplicationContext());
         GroceryItemDao dao = db.groceryItemDao();
-        dao.delete(groceryItems.get(position));
 
         groceryItems = (ArrayList<GroceryItem>) dao.getAll();
         recyclerView.setAdapter(new GroceryListAdapter(groceryItems, this));
@@ -148,6 +158,13 @@ public class MainActivity extends AppCompatActivity implements GroceryListAdapte
 
             case R.id.fridge:
                 //getSupportFragmentManager().beginTransaction().replace(R.id.container, thirdFragment).commit();
+
+                return true;
+
+            case R.id.sustainability:
+                Intent intent3 = new Intent(MainActivity.this, Sustainability.class);
+                startActivity(intent3);
+
                 return true;
         }
         return false;

@@ -63,15 +63,21 @@ public class RecipesActivity extends AppCompatActivity implements BottomNavigati
                 return true;
 
             case R.id.account:
-                Intent intent2 = new Intent(RecipesActivity.this, account.class);
-                startActivity(intent2);
+                Intent intent1 = new Intent(RecipesActivity.this, account.class);
+                startActivity(intent1);
                 //getSupportFragmentManager().beginTransaction().replace(R.id.container, secondFragment).commit();
                 return true;
 
             case R.id.fridge:
-                Intent intent3 = new Intent(RecipesActivity.this, MainActivity.class);
-                startActivity(intent3);
+                Intent intent2 = new Intent(RecipesActivity.this, MainActivity.class);
+                startActivity(intent2);
                 //getSupportFragmentManager().beginTransaction().replace(R.id.container, thirdFragment).commit();
+                return true;
+
+            case R.id.sustainability:
+                Intent intent3 = new Intent(RecipesActivity.this, Sustainability.class);
+                startActivity(intent3);
+
                 return true;
         }
         return false;
