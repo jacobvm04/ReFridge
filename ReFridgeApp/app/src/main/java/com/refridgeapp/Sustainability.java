@@ -6,12 +6,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Sustainability extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     private TextView scoreContent;
+    private ProgressBar scoreBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,10 +26,12 @@ public class Sustainability extends AppCompatActivity implements BottomNavigatio
         bottomNavigationView.setSelectedItemId(R.id.sustainability);
 
         scoreContent = findViewById(R.id.scoreContent);
+        scoreBar = findViewById(R.id.progressBar);
 
         AppDatabase db = AppDatabase.getInstance(getApplicationContext());
         int score = GroceryItemUse.getSustainabilityScore(db);
         scoreContent.setText(String.valueOf(score));
+        scoreBar.setProgress(score);
     }
 
     @Override
