@@ -39,7 +39,9 @@
         <entry key="app/src/main/res/layout/activity_camera.xml" value="0.40625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.41448382126348227" />
         <entry key="app/src/main/res/layout/activity_recipes.xml" value="0.37864583333333335" />
+        <entry key="app/src/main/res/layout/activity_sustainability.xml" value="0.24864130434782608" />
         <entry key="app/src/main/res/layout/activity_viewfinder.xml" value="0.2753623188405797" />
+        <entry key="app/src/main/res/layout/content_recipes.xml" value="0.24864130434782608" />
         <entry key="app/src/main/res/layout/grocery_item.xml" value="0.31302083333333336" />
       </map>
     </option>

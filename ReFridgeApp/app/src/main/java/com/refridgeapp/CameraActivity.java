@@ -1,6 +1,7 @@
 package com.refridgeapp;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
@@ -37,6 +38,12 @@ import java.util.concurrent.Executors;
 
 import android.view.View;
 import android.widget.Button;
+
+import java.util.Calendar;
+import java.util.Date;
+import android.app.PendingIntent;
+import android.content.Intent;
+
 
 public class CameraActivity extends AppCompatActivity {
     private PreviewView previewView;
@@ -105,6 +112,30 @@ public class CameraActivity extends AppCompatActivity {
                                                             //Log.d("Receipt List", String.valueOf(resultList));
                                                             // analyze text
                                                             // dump text to database
+                                                            AppDatabase db = AppDatabase.getInstance(getApplicationContext());
+                                                            GroceryItemDao dao = db.groceryItemDao();
+                                                            Calendar calendar = Calendar.getInstance();
+                                                            calendar.setTime(new Date());
+
+                                                            calendar.add(Calendar.DATE, 4);
+                                                            dao.insert(new GroceryItem("Broccoli", calendar.getTime()));
+
+                                                            calendar.add(Calendar.DATE, 3);
+                                                            dao.insert(new GroceryItem("Whole Milk", calendar.getTime()));
+
+                                                            calendar.add(Calendar.DATE, 7);
+                                                            dao.insert(new GroceryItem("Cheese: American", calendar.getTime()));
+
+                                                            calendar.add(Calendar.DATE, 7);
+                                                            dao.insert(new GroceryItem("Potatoes", calendar.getTime()));
+
+
+
+
+
+
+                                                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                                            startActivity(intent);
                                                         }
                                                     })
                                                     .addOnFailureListener(

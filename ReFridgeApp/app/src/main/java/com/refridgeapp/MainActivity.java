@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements GroceryListAdapte
             dao.insert(new GroceryItem("Eggs", calendar.getTime()));
 
             calendar.add(Calendar.DATE, 1);
-            dao.insert(new GroceryItem("Meat", calendar.getTime()));
+            dao.insert(new GroceryItem("Ham", calendar.getTime()));
 
             groceryItems = (ArrayList<GroceryItem>) dao.getAll();
         }

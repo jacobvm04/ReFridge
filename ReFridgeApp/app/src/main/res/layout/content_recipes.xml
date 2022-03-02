@@ -42,7 +42,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
-        android:text="Items: \n Eggs\n Ham\n Broccolli\n Potatos\n Cheese \n Milk"
+        android:text="Items: \n Eggs\n Ham\n Broccoli\n Potatoes\n Cheese \n Milk"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/Generate_recipes_button"
         app:layout_constraintEnd_toEndOf="parent"

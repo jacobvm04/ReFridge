@@ -25,7 +25,7 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="15dp"
         android:lineSpacingExtra="2sp"
-        android:text="Improve your Sustainaility by\n\n - Only buying food you need \n - Consuming food before it expires as much as possible\n- Compost food that is compostable instead of throwing it out"
+        android:text="Improve your Sustainaility by\n\n - Only buying food you need \n - Consuming food before it expires as much as possible\n- Compost food that is compostable instead of throwing it out \n - Buying less ham, you've thrown out a lot in the past"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,8 +87,10 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottomAppBar"
